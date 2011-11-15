@@ -1,0 +1,4 @@
+.page-header
+  %h1 Profile
+
+= render :partial => 'admin/pform', :locals => {:user => current_user, :editing => true}

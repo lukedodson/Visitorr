@@ -1,0 +1,28 @@
+.row
+  .span6.columns
+    %fieldset
+      = form_for user, :html => {:class => 'form-stacked'} do |f|
+        - if user.errors.any?
+          .alert-message.block-message.error
+            %p #{pluralize(user.errors.count, "problem")} with your registration:
+            .errors
+              - user.errors.full_messages.each do |msg|
+                %p= msg
+
+
+
+        .clearfix
+          = f.label :address
+          .input
+            = f.text_field :address, :class => "field"
+        .clearfix
+          = f.label :phone
+          .input
+            = f.text_field :phone, :class => "field"
+        .clearfix
+          = f.label :video, "Video URL"
+          .input
+            = f.text_field :video, :class => "field"
+
+        .actions
+          = f.submit((defined?(editing) ? "Update" : "Update"), :class => "btn primary")

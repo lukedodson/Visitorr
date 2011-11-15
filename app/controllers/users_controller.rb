@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  before_filter :require_login, :only => [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -7,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url, :notice => "Signed up!"
+      login(params[:user][:email], params[:user][:password])
+      redirect_to admin_url, :notice => "Successfully registered. Welcome to Visitors"
     else
       render :new
     end
@@ -15,5 +17,14 @@ class UsersController < ApplicationController
   
   def edit
     
+  end
+  
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to profile_path, :notice => "Profile updated"
+    else
+      render profile_path, :notice => "I'm sorry, that didn't save. Please try again."
+    end
   end
 end

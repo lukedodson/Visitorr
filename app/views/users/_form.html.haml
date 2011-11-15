@@ -15,7 +15,12 @@
           = f.label :email
           .input
             = f.text_field :email, :class => "field"
-
+        .clearfix
+          = f.label :name
+          .input
+            = f.text_field :name, :class => "field"
+            
+          %span.note This will be used to find your organization eg. visitorr.com/your-name-here
         .clearfix
           = f.label :password
           .input
