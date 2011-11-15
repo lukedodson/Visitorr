@@ -6,6 +6,7 @@ gem 'sorcery'
 gem 'execjs'
 gem 'therubyracer'
 gem 'haml'
+gem 'has_unique_slug'
 
 group :development, :test do
   gem 'sqlite3'

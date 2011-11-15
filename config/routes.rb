@@ -1,15 +1,23 @@
 Visitorr::Application.routes.draw do
 
 
+  get "visitors/new"
+
+  get "visitors/success"
+
   resources :sessions
   resources :users
+  resources :visitors
   
   match "signin", :to => "sessions#new", :as =>:sign_in
   match "edit_profile" => "users#edit", :as => :edit_profile
   match "register", :to => "users#new", :as => :register
   match "signout", :to => "sessions#destroy", :as => :sign_out
+  match "success", :to => "visitors#success", :as => :success
   
   root :to => "pages#home"
+
+  match ':id', :to => "visitors#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
