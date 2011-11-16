@@ -1,5 +1,5 @@
 .row
-  .span6.columns
+  .span10.columns
     %fieldset
       = form_for user, :html => {:class => 'form-stacked'} do |f|
         - if user.errors.any?
@@ -30,7 +30,7 @@
         .clearfix
           = f.label :email_body, "Email body"
           .input
-            = f.text_area :email_body, :class => "field"
+            = f.text_area :email_body, :class => "email_body"
 
         .actions
           = f.submit((defined?(editing) ? "Update" : "Update"), :class => "btn primary")
