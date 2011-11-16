@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_unique_slug :column => :slug, :subject => :name
   before_save :update_stripe
   before_save :make_slug
-  has_many :visitors
+  has_many :visitors, :dependent => :destroy
   
   attr_accessor :stripe_token
 
