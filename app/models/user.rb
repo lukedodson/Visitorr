@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_unique_slug :column => :slug, :subject => :name
   before_save :update_stripe
-  before_save :make_slug
+#  before_save :make_slug
   has_many :visitors
   
   attr_accessor :stripe_token
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   errors.add :base, "There was a problem with your credit card." 
   end
 
-  def make_slug
-    self.slug = self.name.parameterize
-  end
+#  def make_slug
+#    self.slug = self.name.parameterize
+#  end
 end
