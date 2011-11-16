@@ -19,8 +19,7 @@ class User < ActiveRecord::Base
   validates :name,  :uniqueness => { :case_sensitive => false },
                     :presence => true
 
-  validates :slug,  :uniqueness => { :case_sensitive => false },
-                    :presence => true
+  validates :slug,  :uniqueness => { :case_sensitive => false }
 
   def update_stripe
     if stripe_token.present?
