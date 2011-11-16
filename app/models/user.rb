@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
   
   attr_accessor :stripe_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :user_id
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
   validates_presence_of       :email
   validates_uniqueness_of     :email
-  validates_uniqueness_of     :name
+  validates_uniqueness_of     :name, :slug
 
   def update_stripe
     if stripe_token.present?

@@ -10,9 +10,16 @@
                 %p= msg
 
         .clearfix
-          = f.label :name
+          = f.label :name, "Organization name"
           .input
             = f.text_field :name, :class => "field"
+            - if defined? editing
+              %span.help-block  
+                This is your url - visitors can find you at:
+                = link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", "#{request.env["HTTP_HOST"]}/#{user.slug}" 
+            - else
+              %span.help-block 
+              Your visitors will use this to find you.
 
         .clearfix
           = f.label :email
