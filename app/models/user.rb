@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
           :card => stripe_token
         )
         self.last_4_digits = customer.active_card.last4
-        response = customer.update_subscription({:plan => "visitorr+"})
+        response = customer.update_subscription({:plan => "Visitorr+"})
       else
         customer = Stripe::Customer.retrieve(stripe_id)
         customer.card = stripe_token
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
       self.last_4_digits = last_4_digits_was
     end
     rescue Stripe::InvalidRequestError => e  
-  logger.error "Stripe error while creating customer: #{e.mesage}"  
+  logger.error "Stripe error while creating customer: #{e.message}"  
   errors.add :base, "There was a problem with your credit card." 
   end
 

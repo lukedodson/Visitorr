@@ -62,17 +62,17 @@
           .clearfix
             = label_tag :credit_card_number
             .input
-              = text_field_tag :credit_card_number, params[:credit_card_number], :class => "field", :disabled => true
+              = text_field_tag :credit_card_number, params[:credit_card_number], :class => "field", :disabled => false
 
           .clearfix
             = label_tag :cvv, "Security code (CVV)"
             .input
-              = text_field_tag :cvv, params[:cvv], :class => "small", :disabled => true
+              = text_field_tag :cvv, params[:cvv], :class => "small", :disabled => false
 
           .clearfix
             = label_tag :expiry_date
             .input
-              = date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"}
+              = date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => false}, {:class => "small"}
 
             /empty
           %span.note
