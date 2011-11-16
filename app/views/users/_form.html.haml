@@ -9,18 +9,16 @@
               - user.errors.full_messages.each do |msg|
                 %p= msg
 
-
+        .clearfix
+          = f.label :name
+          .input
+            = f.text_field :name, :class => "field"
 
         .clearfix
           = f.label :email
           .input
             = f.text_field :email, :class => "field"
-        .clearfix
-          = f.label :name
-          .input
-            = f.text_field :name, :class => "field"
-            
-          %span.note This will be used to find your organization eg. visitorr.com/your-name-here
+
         .clearfix
           = f.label :password
           .input
@@ -33,9 +31,52 @@
           .input
             = f.password_field :password_confirmation, :class => "field"
 
+          = f.hidden_field :stripe_token
+          = f.hidden_field :last_4_digits
 
+        - if user.last_4_digits
+          #change-card.clearfix
+            %label Card
+            .input
+              %span
+                Using card ending with #{user.last_4_digits}
+                = link_to "(change)", "#"
+        
+        - if defined? editing
+          = if user.subscribed == true
+            #cancel-subscription.clearfix
+              %label
+              .input
+                %span
+                  = link_to "Cancel subscription", cancel_subscription_path
+
+        %noscript
+          %p
+            This form requires Javascript to use
+
+        #credit-card{:style => user.last_4_digits ? "display:none" : "display:block"}
+          #credit-card-errors{:style => "display:none"}
+            #stripe-error-message.alert-message.block-message.error
+
+          / these fields are disabled before submission and are never transmitted back to rails
+          .clearfix
+            = label_tag :credit_card_number
+            .input
+              = text_field_tag :credit_card_number, params[:credit_card_number], :class => "field", :disabled => true
+
+          .clearfix
+            = label_tag :cvv, "Security code (CVV)"
+            .input
+              = text_field_tag :cvv, params[:cvv], :class => "small", :disabled => true
+
+          .clearfix
+            = label_tag :expiry_date
+            .input
+              = date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"}
+
+            /empty
           %span.note
-            We take your privacy seriously and will never spam or sell your email.
+            Your credit card details will be sent directly to our payment processor
 
         .actions
           = f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn primary")

@@ -9,6 +9,7 @@ gem 'haml'
 gem 'has_unique_slug'
 gem 'heroku'
 gem 'sass-rails', "  ~> 3.1.0"
+gem 'stripe'
 
 group :production do
   gem 'pg'

@@ -9,6 +9,7 @@ Visitorr::Application.routes.draw do
   match "register", :to => "users#new", :as => :register
   match "signout", :to => "sessions#destroy", :as => :sign_out
   match "success", :to => "visitors#success", :as => :success
+  match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   
   match "admin", :to => "admin#visitors", :as => :admin
   match "admin/profile", :to => "admin#profile", :as => :profile
