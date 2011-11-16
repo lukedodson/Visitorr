@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116022442) do
+ActiveRecord::Schema.define(:version => 20111116093626) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                                           :null => false
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20111116022442) do
     t.string   "last_4_digits"
     t.string   "stripe_id"
     t.boolean  "subscribed",                   :default => false
+    t.string   "subject"
+    t.text     "email_body"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

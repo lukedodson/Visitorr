@@ -23,6 +23,14 @@
           = f.label :video, "Video URL"
           .input
             = f.text_field :video, :class => "field"
+        .clearfix
+          = f.label :subject, "Email subject"
+          .input
+            = f.text_field :subject, :class => "field"
+        .clearfix
+          = f.label :email_body, "Email body"
+          .input
+            = f.text_area :email_body, :class => "field"
 
         .actions
           = f.submit((defined?(editing) ? "Update" : "Update"), :class => "btn primary")
