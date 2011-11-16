@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :stripe_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :user_id
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
