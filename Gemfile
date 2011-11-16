@@ -10,6 +10,8 @@ gem 'has_unique_slug'
 gem 'heroku'
 gem 'sass-rails', "  ~> 3.1.0"
 gem 'stripe'
+gem 'jquery-rails'
+gem 'coffee-rails', "~> 3.1.0"
 
 group :production do
   gem 'pg'
@@ -20,10 +22,9 @@ group :development, :test do
 end
 
 group :assets do
-  gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
+
 
 
