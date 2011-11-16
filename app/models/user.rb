@@ -11,9 +11,16 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
-  validates_presence_of       :email
-  validates_uniqueness_of     :email
   validates_uniqueness_of     :name, :slug
+
+  validates :email, :uniqueness => { :case_sensitive => false },
+                    :presence => true
+
+  validates :name,  :uniqueness => { :case_sensitive => false },
+                    :presence => true
+
+  validates :slug,  :uniqueness => { :case_sensitive => false },
+                    :presence => true
 
   def update_stripe
     if stripe_token.present?
