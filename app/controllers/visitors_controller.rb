@@ -12,7 +12,7 @@ class VisitorsController < ApplicationController
     @user = User.find_by_id(params[:visitor][:user_id])
     @visitor = @user.visitors.build(params[:visitor])
     if @visitor.save
-#      VisitorMailer.weekly_emailer(@visitor).deliver
+      VisitorMailer.welcome_mailer(@visitor).deliver
       redirect_to success_path, :notice => "Success! You will be contacted shortly!"
     else
       redirect_to visitors_new_path, :notice => "Something went wrong.."
