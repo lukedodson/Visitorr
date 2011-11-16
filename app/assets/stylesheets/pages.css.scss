@@ -2,17 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//#pages_controller{
+#pages_controller{
 
-//  #header {
-//    background: url('/assets/header_bg.jpg') 50% 0;
-//    height: 350px;
-//    border-bottom: solid 9px #62645B;
-//    margin-bottom: 0; 
-//    padding-bottom: 0;
-//  }
+  #header {
+    background: url('/assets/header_bg.jpg') 50% 0;
+    height: 300px;
+    border-bottom: solid 9px #62645B;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+  }
 
-// .main.container {
-//   padding-top:40px;
-// }
-//}
+ .main.container {
+   padding-top:40px;
+ }
+}
