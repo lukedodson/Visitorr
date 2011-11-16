@@ -7,10 +7,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if @user.save && @user.subscribed == true
       login(params[:user][:email], params[:user][:password])
       redirect_to profile_url, :notice => "Welcome to Visitorr! Please take a moment to fill in your information. This information will be sent to your visitors!"
     else
+      flash.alert = "Something went wrong"
       render :new
     end
   end
