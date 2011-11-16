@@ -7,6 +7,11 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'haml'
 gem 'has_unique_slug'
+gem 'heroku'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'sqlite3'
