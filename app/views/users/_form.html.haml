@@ -41,14 +41,6 @@
               %span
                 Using card ending with #{user.last_4_digits}
                 = link_to "(change)", "#"
-        
-        - if defined? editing
-          = if user.subscribed == true
-            #cancel-subscription.clearfix
-              %label
-              .input
-                %span
-                  = link_to "Cancel subscription", cancel_subscription_path
 
         %noscript
           %p
