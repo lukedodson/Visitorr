@@ -70,4 +70,8 @@ Visitorr::Application.configure do
     :domain         => 'heroku.com'
   }
   ActionMailer::Base.delivery_method = :smtp
+  
+  # production test settings - lukedodson@gmail.com
+  Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS" 
+  STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6" 
 end

@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th></th>
+    <th>Status</th>
     <th></th>
     <th></th>
   </tr>
@@ -13,7 +13,8 @@
   <tr>
     <td><%= visitor.name %></td>
     <td><%= visitor.email %></td>
-    <td><%= link_to 'Destroy', visitor, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= visitor.welcomed ? "Contacted" : "New" %></td>
+    <td><%= link_to 'Delete', visitor, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

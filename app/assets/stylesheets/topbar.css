@@ -1,0 +1,72 @@
+body{
+  overflow:hidden;
+}
+
+.topbar{
+  height: 60px;
+  top: 0;
+  left: 0;
+	background: #222;
+	background-color: #222222;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #222222));
+	background-image: -webkit-linear-gradient(top, #333333, #222222);
+	background-repeat: repeat-x;
+	-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1); 
+}
+.navcontainer{
+  width:940px;
+  margin:0 auto;
+}
+
+
+.topbar a
+{
+	color: #bfbfbf;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.topbar a:hover,.topbar ul li.active a
+{
+	background-color: #333;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: #ffffff;
+	text-decoration: none;
+}
+.topbar h3
+{
+	position: relative;
+	top:15px;
+}
+.topbar h3 a
+{
+	color: #ffffff;
+	display: block;
+	float: left;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1;
+	margin-left: -20px;
+	padding: 8px 20px 12px;
+	line-height:15px;
+}
+
+.topbar ul{
+  position:relative;
+  list-style: none;
+  margin: 0 10px 0 0;
+  top:19px;
+}
+.topbar ul li{
+  display:inline;
+}
+.topbar ul li a{
+	line-height: 19px;
+	padding: 10px 10px 11px;
+}
+
+
+.container{
+  width:940px;
+  margin:0 auto;
+}

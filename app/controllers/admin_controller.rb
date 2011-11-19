@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 
   def visitors
     @user = current_user
-    @visitors = @user.visitors
+    @visitors = @user.visitors.order("created_at desc")
   end
 
   def profile
