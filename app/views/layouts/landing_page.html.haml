@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= "Visitorr"
+    %title= "Welcome"
     = stylesheet_link_tag :application
     = javascript_include_tag "https://js.stripe.com/v1/"
     = javascript_tag "Stripe.publishableKey = '#{STRIPE_PUBLIC_KEY}';";
@@ -23,6 +23,14 @@
             %li= link_to "Sign In", sign_in_path
 
     #header
+      .headercontainer
+        #headtext
+          %h2 Welcome to Visitorr!
+          %h4 Get connected, stay connected.
+          %p With Visitorr you can make it easy and simple for your visitors to leave their contact details with you at your Sunday service. Visitors to your church will receive a warm welcome video Monday morning thanking them for their visit and providing them with the next steps to connect with your church and its community. You can customize the video and the contents of your message to your visitor once you have your account setup. 
+          %p= button_to "Get started", get_started_path, :class => "getstarted"
+        #headimg
+          %span= image_tag("stockphoto.jpg")
     .container
       .main
         .row
@@ -30,5 +38,15 @@
             - if flash.notice
               #notice.alert-message.block-message.success= flash.notice
         = yield
-        = debug(params) if Rails.env.development?
+        
+        #imagecontainer
+          .imagebox
+            = image_tag("assimilation.png")
+          .imagebox
+            = image_tag("connect.png")
+          .imagebox
+            = image_tag("growth.png")      
+            
+                        
+
 

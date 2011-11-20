@@ -1,4 +1,6 @@
 class VisitorsController < ApplicationController
+  has_mobile_fu
+  
   def new
     @user = User.find params[:id]
     if @user.nil?

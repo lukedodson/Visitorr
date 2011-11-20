@@ -11,7 +11,7 @@ Visitorr::Application.routes.draw do
   
   match "signin", :to => "sessions#new", :as =>:sign_in
   match "settings" => "users#edit", :as => :settings #refactor this to be account or settings
-  match "register", :to => "users#new", :as => :register
+  match "get-started", :to => "users#new", :as => :get_started
   match "signout", :to => "sessions#destroy", :as => :sign_out
   match "success", :to => "visitors#success", :as => :success
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
