@@ -74,4 +74,6 @@ Visitorr::Application.configure do
   # production test settings - lukedodson@gmail.com
   Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS" 
   STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6" 
+  
+  ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) 
 end
