@@ -12,6 +12,7 @@ gem 'sass-rails', "  ~> 3.1.0"
 gem 'stripe'
 gem 'jquery-rails'
 gem 'coffee-rails', "~> 3.1.0"
+gem 'delayed_job'
 
 group :production do
   gem 'pg'
