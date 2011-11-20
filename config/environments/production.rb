@@ -59,7 +59,7 @@ Visitorr::Application.configure do
   config.active_support.deprecation = :notify
 
   # required config for heroku
-  config.action_mailer.default_url_options = {:host => 'visitorr-dev.herokuapp.com'}
+  config.action_mailer.default_url_options = {:host => 'visitorr.herokuapp.com'}
   
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
@@ -74,5 +74,4 @@ Visitorr::Application.configure do
   # production test settings - lukedodson@gmail.com
   Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS" 
   STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6" 
-  
 end
