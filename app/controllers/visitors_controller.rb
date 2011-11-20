@@ -12,7 +12,7 @@ class VisitorsController < ApplicationController
     @user = User.find_by_id(params[:visitor][:user_id])
     @visitor = @user.visitors.build(params[:visitor])
     if @visitor.save
-       Delayed::Job.enqueue(WelcomeJob.new(@visitor.id), :run_at => 30.seconds.from_now)
+       Delayed::Job.enqueue(WelcomeJob.new(@visitor.id), :run_at => 2.days.from_now)
 #      VisitorMailer.welcome_mailer(@visitor).deliver
       redirect_to success_path, :notice => "Success! You will be contacted shortly!"
     else
