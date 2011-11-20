@@ -6,15 +6,4 @@ class AdminController < ApplicationController
     @user = current_user
     @visitors = @user.visitors.order("created_at desc")
   end
-
-  def profile
-    
-  end
-
-  private
-
-    def subscribed
-      @user = current_user
-      redirect_to edit_profile_path, :notice => "You are not currently subscribed. Please enter your payment information to access your visitors." if current_user.subscribed == false
-    end
 end

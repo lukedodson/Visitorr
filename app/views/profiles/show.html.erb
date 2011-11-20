@@ -1,0 +1,14 @@
+<p>
+  Phone: <%= @profile.phone %>
+</p>
+<p>
+  Address: <%= @profile.address %>
+</p>
+<p>
+  Subject: <%= @profile.subject %>
+</p>
+<p>
+  Body: 
+</p>
+<p class="email_body"><%= @profile.body %></p>
+<%= link_to "Edit profile", edit_profile_path %>

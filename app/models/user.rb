@@ -4,10 +4,11 @@ class User < ActiveRecord::Base
   before_save :update_stripe
   before_save :make_slug
   has_many :visitors, :dependent => :destroy
+  has_one :profile, :dependent => :destroy
   
   attr_accessor :stripe_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create

@@ -1,5 +1,10 @@
 Visitorr::Application.routes.draw do
 
+  get "profiles/show"
+
+  get "profiles/edit"
+
+  resources :profiles
   resources :sessions
   resources :users
   resources :visitors
@@ -12,7 +17,6 @@ Visitorr::Application.routes.draw do
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   
   match "admin", :to => "admin#visitors", :as => :admin
-  match "profile", :to => "admin#profile", :as => :profile
   
   root :to => "pages#home"
 
