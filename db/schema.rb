@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(:version => 20111120015600) do
     t.string   "video_url"
     t.string   "subject"
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

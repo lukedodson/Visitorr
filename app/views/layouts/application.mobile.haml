@@ -11,8 +11,8 @@
     %meta{:name => "viewport", :content => "user-scalable=no, width=device-width"}
 
   %body{ :id => "#{params[:controller].parameterize}_controller"  }
-    .topbar
-      .navcontainer
+    .navcontainer      
+      .topbar
         -if @user
           %h3= "Welcome to #{@user.name}"
         -else
