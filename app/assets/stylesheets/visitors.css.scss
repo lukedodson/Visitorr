@@ -1,3 +1,30 @@
 // Place all the styles related to the visitors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#visitors_controller{
+	
+	.mobile.navcontainer{
+		width:480px;
+		margin: 0 auto;
+	}
+
+	.mobile.topbar h3
+	{
+		position: relative;
+		top:0;
+		color: #fff;
+		text-indent:15px;
+	}
+
+	.row .span6{
+		width:480px;
+	}
+
+	.mobile.container{
+	  width:480px;
+	  margin:0 auto;
+	}
+
+}

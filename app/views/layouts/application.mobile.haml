@@ -2,7 +2,7 @@
 %html
   %head
     %title= "Visitorr"
-    = stylesheet_link_tag "mobile.css.scss"
+    = stylesheet_link_tag :application
     = javascript_include_tag "https://js.stripe.com/v1/"
     = javascript_tag "Stripe.publishableKey = '#{STRIPE_PUBLIC_KEY}';";
     = javascript_include_tag :application
@@ -11,15 +11,15 @@
     %meta{:name => "viewport", :content => "user-scalable=no, width=device-width"}
 
   %body{ :id => "#{params[:controller].parameterize}_controller"  }
-    .navcontainer      
-      .topbar
+    .mobile.navcontainer      
+      .mobile.topbar
         -if @user
           %h3= "Welcome to #{@user.name}"
         -else
           %h3= link_to image_tag('visitorr_logo.png'), root_path
 
     #header
-    .container
+    .mobile.container
       .main
         .row
           .span6.columns
