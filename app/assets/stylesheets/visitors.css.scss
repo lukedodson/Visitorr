@@ -18,8 +18,11 @@
 		text-indent:15px;
 	}
 
-	.row .span6{
+	.row .spanmob{
 		width:480px;
+		display:inline;
+		float:left;
+		margin-left:20px;
 	}
 
 	.mobile.container{
