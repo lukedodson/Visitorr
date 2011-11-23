@@ -40,7 +40,7 @@
           .input
             = f.password_field :password_confirmation, :class => "field"
 
-          = f.hidden_field :stripe_token
+          = f.hidden_field :stripe_card_token
           = f.hidden_field :last_4_digits
 
         - if user.last_4_digits
@@ -62,29 +62,30 @@
           %p
             This form requires Javascript to use
 
-        #credit-card{:style => user.last_4_digits ? "display:none" : "display:block"}
-          #credit-card-errors{:style => "display:none"}
+        #credit-card{:style => user.stripe_card_token.present? ? "display:none" : "display:block"} 
+          #credit-card-errors
             #stripe-error-message.alert-message.block-message.error
 
           / these fields are disabled before submission and are never transmitted back to rails
           .clearfix
-            = label_tag :credit_card_number
+            = label_tag :card_number, "Credit Card Number"
             .input
-              = text_field_tag :credit_card_number, params[:credit_card_number], :class => "field", :disabled => true
+              = text_field_tag :card_number, nil, name: nil
 
           .clearfix
-            = label_tag :cvv, "Security code (CVV)"
+            = label_tag :card_code, "Security Code on Card (CVV)"
             .input
-              = text_field_tag :cvv, params[:cvv], :class => "small", :disabled => true
+              = text_field_tag :card_code, nil, name: nil
 
           .clearfix
-            = label_tag :expiry_date
+            = label_tag :card_month, "Card Expiration"
             .input
-              = date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"}
+              = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}, {:class => "small"}
+              = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}, {:class => "small"}
 
             /empty
           %span.note
             Your credit card details will be sent directly to our payment processor
 
         .actions
-          = f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn primary")
+          = f.submit((defined?(editing) ? "Update" : "Subscribe"), :class => "btn primary")

@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_unique_slug :column => :slug, :subject => :name
-  before_save :update_stripe
+  # before_save :update_stripe
   before_save :make_slug
   has_many :visitors, :dependent => :destroy
   has_one :profile, :dependent => :destroy
   
-  attr_accessor :stripe_token
+  # attr_accessor :stripe_token
+  
+  attr_accessor :stripe_card_token
 
   attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed
 
@@ -21,6 +23,19 @@ class User < ActiveRecord::Base
                     :presence => true
 
   validates :slug,  :uniqueness => { :case_sensitive => false }
+  
+  def save_with_payment
+    if valid?
+      customer = Stripe::Customer.create(description: email, plan: "Visitorr+", card: stripe_card_token)
+      self.stripe_customer_token = customer.id
+      save!
+    end
+  rescue Stripe::InvalidRequestError => e
+    logger.error "Stripe error while creating customer: #{e.message}"
+    errors.add :base, "The was a problem with your credit card."
+    false
+  end
+end
 
   def update_stripe
     if stripe_token.present?

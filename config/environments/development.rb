@@ -45,4 +45,11 @@ Visitorr::Application.configure do
   }  
 
   ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) 
+  
+  PayPal::Recurring.configure do |config|
+    config.sandbox = true
+    config.username = "mercha_1322029739_biz_api1.representativestrategies.com"
+    config.password = "1322029777"
+    config.signature = "ATwVOlj-u4B.C8BxuGYLRapce8kUA9poCNL-EemM1wFiw0x82go9SGmb"
+  end
 end
