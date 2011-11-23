@@ -15,7 +15,6 @@ Visitorr::Application.routes.draw do
   match "signout", :to => "sessions#destroy", :as => :sign_out
   match "success", :to => "visitors#success", :as => :success
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
-  
   match "admin", :to => "admin#visitors", :as => :admin
   
   root :to => "pages#home"

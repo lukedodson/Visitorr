@@ -19,7 +19,7 @@
 	.mobile.topbar h3
 	{
 		position: relative;
-		top:0;
+		top:5px;
 		color: #fff;
 		text-indent:15px;
 	}
@@ -35,5 +35,17 @@
 	  width:320px;
 	  margin:0 auto;
 	}
-
+	
+	.mobile.main{
+		padding-top:0;
+	}
+	
+	.mobile.clearfix{
+		padding-bottom:40px;
+	}
+	
+/*	.mobilefix{
+		padding-bottom:18px;
+		margin-bottom:18px;
+	}*/
 }
