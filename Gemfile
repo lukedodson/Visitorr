@@ -13,6 +13,7 @@ gem 'stripe'
 gem 'jquery-rails'
 gem 'coffee-rails', "~> 3.1.0"
 gem 'delayed_job'
+gem 'paypal-recurring'
 
 group :production do
   gem 'pg'

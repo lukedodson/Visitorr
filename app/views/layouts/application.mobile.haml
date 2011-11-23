@@ -10,7 +10,7 @@
     %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
     %meta{:name => "viewport", :content => "user-scalable=false, width=device-width"}
 
-  %body{ :id => "#{params[:controller].parameterize}_controller"  }
+  %body{ :id => "#{params[:controller].parameterize}_mobile"  }
     .mobile.navcontainer      
       .mobile.topbar
         -if @user
