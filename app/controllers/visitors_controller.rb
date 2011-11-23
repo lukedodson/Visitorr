@@ -18,7 +18,7 @@ class VisitorsController < ApplicationController
 #      VisitorMailer.welcome_mailer(@visitor).deliver
       redirect_to success_path, :notice => "Success! You will be contacted shortly!"
     else
-      redirect_to visitors_new_path, :notice => "Something went wrong.."
+      render :new
     end
   end
 
