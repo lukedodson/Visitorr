@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :stripe_card_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
     if valid?
       customer = Stripe::Customer.create(description: email, plan: "Visitorr+", card: stripe_card_token)
       self.stripe_customer_token = customer.id
+      self.subscribed = true
+      self.last_4_digits = customer.active_card.last4
       save!
     end
   rescue Stripe::InvalidRequestError => e
@@ -35,7 +37,6 @@ class User < ActiveRecord::Base
     errors.add :base, "The was a problem with your credit card."
     false
   end
-end
 
   def update_stripe
     if stripe_token.present?

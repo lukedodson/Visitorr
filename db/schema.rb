@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120015600) do
+ActiveRecord::Schema.define(:version => 20111123122721) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20111120015600) do
     t.boolean  "subscribed",                   :default => false
     t.string   "subject"
     t.text     "email_body"
+    t.string   "stripe_customer_token"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
