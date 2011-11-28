@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120015600) do
+ActiveRecord::Schema.define(:version => 20111126041106) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20111120015600) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                           :null => false
+    t.string   "email",                                             :null => false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
@@ -54,9 +54,12 @@ ActiveRecord::Schema.define(:version => 20111120015600) do
     t.string   "video"
     t.string   "last_4_digits"
     t.string   "stripe_id"
-    t.boolean  "subscribed",                   :default => false
+    t.boolean  "subscribed",                     :default => false
     t.string   "subject"
     t.text     "email_body"
+    t.string   "stripe_customer_token"
+    t.string   "paypal_customer_token"
+    t.string   "paypal_recurring_profile_token"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

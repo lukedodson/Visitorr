@@ -8,6 +8,8 @@
             .errors
               - user.errors.full_messages.each do |msg|
                 %p= msg
+                
+        = render :partial => "payment_options"
 
         .clearfix
           = f.label :name, "Organization name"
