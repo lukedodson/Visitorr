@@ -8,9 +8,22 @@
             .errors
               - user.errors.full_messages.each do |msg|
                 %p= msg
-        = unless user.payment_provided?        
-          = render :partial => "payment_options"
-          
+
+        - unless user.payment_provided?
+          .field
+            = radio_button_tag :pay_with, :card, true
+            = label_tag :pay_with_card do
+              = image_tag "visa.png"
+              = image_tag "mastercard.png"
+              = image_tag "discover.png"
+              = image_tag "american_express.png"
+              = image_tag "jcb.png"
+            = radio_button_tag :pay_with, :paypal
+            = label_tag :pay_with_paypal do
+              = image_tag "paypal.png"
+        #paypal_checkout{:style => "display:none"}
+          = link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path
+
         #billing_fields
           .clearfix
             = f.label :name, "Organization name"
