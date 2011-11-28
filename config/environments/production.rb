@@ -74,4 +74,11 @@ Visitorr::Application.configure do
   # production test settings - lukedodson@gmail.com
   Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS" 
   STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6" 
+  
+  PayPal::Recurring.configure do |config|
+    config.sandbox = true
+    config.username = "mercha_1322029739_biz_api1.representativestrategies.com"
+    config.password = "1322029777"
+    config.signature = "ATwVOlj-u4B.C8BxuGYLRapce8kUA9poCNL-EemM1wFiw0x82go9SGmb"
+  end
 end
