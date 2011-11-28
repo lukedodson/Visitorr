@@ -21,7 +21,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    
+    if params[:PayerID]
+      @user = current_user
+      @user.update_with_paypal(params[:token], params[:PayerID])
+      redirect_to settings_url, :notice => "Your subscription has been updated! We knew you'd be back."
+    end
   end
   
   def update
@@ -35,10 +39,16 @@ class UsersController < ApplicationController
 
   def cancel_subscription
     if @user = current_user
-      cu = Stripe::Customer.retrieve(@user.stripe_id)
-      if cu.cancel_subscription
-        @user.update_attributes(:subscribed => false, :last_4_digits => "")
-        redirect_to settings_path, :notice => "You'll be back.. they always come back"
+      if @user.paypal_recurring_profile_token.present?
+        @user.paypal.cancel_recurring
+        @user.update_attributes(:subscribed => false, :paypal_recurring_profile_token => nil)
+        redirect_to settings_path, :notice => "Your subscription has been cancelled."
+      else
+        cu = Stripe::Customer.retrieve(@user.stripe_id)
+        if cu.cancel_subscription
+          @user.update_attributes(:subscribed => false, :last_4_digits => "")
+          redirect_to settings_path, :notice => "You'll be back.. they always come back"
+        end
       end
     end
   end
@@ -52,9 +62,15 @@ class UsersController < ApplicationController
   end
   
   def paypal_checkout
-    @user = User.new
-    redirect_to @user.paypal.checkout_url(
-    return_url: new_user_url,
-    cancel_url: root_url)
+    @user = current_user || User.new 
+    if current_user
+      redirect_to @user.paypal.checkout_url(
+      return_url: settings_url,
+      cancel_url: settings_url)
+    else
+      redirect_to @user.paypal.checkout_url(
+      return_url: new_user_url,
+      cancel_url: root_url)
+    end
   end  
 end

@@ -16,6 +16,10 @@ class PaypalPayment
     process(:checkout, options).checkout_url
   end
   
+  def cancel_recurring
+    process(:cancel, :profile_id => @user.paypal_recurring_profile_token)
+  end
+  
   private
   def process(action, options = {})
     options = options.reverse_merge(

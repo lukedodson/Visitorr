@@ -18,6 +18,7 @@ Visitorr::Application.routes.draw do
   match "admin", :to => "admin#visitors", :as => :admin
   
   get 'paypal/checkout', :to => "users#paypal_checkout"
+  get 'paypal/update',   :to => "users#paypal_update"
   root :to => "pages#home"
 
   match ':id', :to => "visitors#new"
