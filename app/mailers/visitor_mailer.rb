@@ -1,9 +1,9 @@
 class VisitorMailer < ActionMailer::Base
   default from: "visitorr@example.com"
 
-  def welcome_mailer(visitor_id)
-    visitorr = Visitor.find_by_id(visitor_id)
+  def welcome_mailer(visitor)
+    visitorr = Visitor.find_by_id(visitor.id)
     @user = User.find_by_id(visitorr.user_id)
-    visitorr.update_attributes(:welcomed => true) if mail(:to => visitorr.email, :subject => "Welcome to #{@user.name} ", :from => @user.email)  
+    visitorr.update_attributes(:welcomed => true) if mail(:to => visitorr.email, :subject => @user.profile.subject || "Welcome to #{@user.name} ", :from => @user.email)  
   end
 end
