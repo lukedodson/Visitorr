@@ -1,13 +1,20 @@
 --- 
+american_express.png: american_express-db5bb4b28f66ad56b2ad42306a8606e8.png
 assimilation.png: assimilation-4e87b47abd40132274e5837574e12993.png
 connect.png: connect-40a58410872f6bf077fe0400742570cc.png
+cvv.png: cvv-cf4f2d54f4f178b3ae98d872a6ac8fa0.png
+discover.png: discover-948aac28b34a176b7905a195defbf805.png
 growth.png: growth-9eee0e96859c9ca46bcea75f1282afa8.png
 header_bg.jpg: header_bg-5902294069e6f3b5e0879958ca4facc4.jpg
+jcb.png: jcb-c22e048e7ae3bf61ae7b0a703ea81be3.png
 logo.png: logo-804317b3cb68fcdbe46770cf0d56221f.png
+mastercard.png: mastercard-1c3c61a566f720aaec831c321cc17076.png
+paypal.png: paypal-ead976d8b1dae23c8f289a61070dce65.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
 stockphoto.jpg: stockphoto-9b6d365aff7bc5ffc0de2dbcc08477f1.jpg
+visa.png: visa-39937bd05ae24577f0ad54814e6274d9.png
 visitorr_logo.png: visitorr_logo-99879af0d4cb42e35c819ec5a8a9be40.png
 jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-bd368409099eb0579c0463d2977af8a9.js
-application.js: application-d4aa06852449c4782edfe7e87d5c9052.js
-application.css: application-9441adb65e82f901e4359d4a143b56ce.css
+application.js: application-938ae7c658bb7a7dcc2556a73203929d.js
+application.css: application-47ad3c72010fba3efcc7733fcecb1609.css
