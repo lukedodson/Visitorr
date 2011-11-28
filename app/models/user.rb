@@ -8,13 +8,14 @@ class User < ActiveRecord::Base
   
   # attr_accessor :stripe_token
   
-  attr_accessor :stripe_card_token
+  attr_accessor :stripe_card_token, :paypal_payment_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
   validates_uniqueness_of     :name, :slug
+
 
   validates :email, :uniqueness => { :case_sensitive => false },
                     :presence => true
@@ -25,6 +26,27 @@ class User < ActiveRecord::Base
   validates :slug,  :uniqueness => { :case_sensitive => false }
   
   def save_with_payment
+    if valid?
+      if paypal_payment_token.present?
+        save_with_paypal_payment
+      else
+        save_with_stripe_payment
+      end
+    end
+  end
+  
+  def save_with_paypal_payment
+    response = paypal.make_recurring
+    self.paypal_recurring_profile_token = response.profile_id
+    self.subscribed = true
+    save!
+  end
+  
+  def paypal
+    PaypalPayment.new(self)
+  end
+  
+  def save_with_stripe_payment
     if valid?
       customer = Stripe::Customer.create(description: email, plan: "Visitorr+", card: stripe_card_token)
       self.stripe_customer_token = customer.id
@@ -67,5 +89,9 @@ class User < ActiveRecord::Base
 
   def make_slug
     self.slug = self.name.parameterize
+  end
+  
+  def payment_provided?
+    stripe_card_token.present? || paypal_payment_token.present?
   end
 end

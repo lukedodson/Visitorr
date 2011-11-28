@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if params[:PayerID]
+      @user.paypal_customer_token = params[:PayerID]
+      @user.paypal_payment_token = params[:token]
+      @user.email = @user.paypal.checkout_details.email
+    end
   end
 
   def create
@@ -44,5 +49,12 @@ class UsersController < ApplicationController
     if @event == "recurring_payment_failed"
       @user.update_attributes(:subscribed => false, :last_4_digits => nil)
     end
+  end
+  
+  def paypal_checkout
+    @user = User.new
+    redirect_to @user.paypal.checkout_url(
+    return_url: new_user_url,
+    cancel_url: root_url)
   end  
 end

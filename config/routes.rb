@@ -17,6 +17,7 @@ Visitorr::Application.routes.draw do
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   match "admin", :to => "admin#visitors", :as => :admin
   
+  get 'paypal/checkout', :to => "users#paypal_checkout"
   root :to => "pages#home"
 
   match ':id', :to => "visitors#new"

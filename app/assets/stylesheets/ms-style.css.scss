@@ -234,4 +234,11 @@ button.btn::-moz-focus-inner,input[type=submit].btn::-moz-focus-inner{padding:0;
   width: 560px;
 }
 
-
+input#pay_with_card{
+	float: left;
+	margin-right:5px;
+}
+input#pay_with_paypal{
+	float:left;
+	margin-right:5px;
+}
