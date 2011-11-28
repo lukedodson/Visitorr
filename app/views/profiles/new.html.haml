@@ -23,6 +23,8 @@
           = f.label :video_url, "Video URL"
           .input
             = f.text_field :video_url, :class => "field"
+        %span.note Upload your video to 
+        = link_to "YouTube", "http://youtube.com/my_webcam"
         .clearfix
           = f.label :subject, "Email subject"
           .input
