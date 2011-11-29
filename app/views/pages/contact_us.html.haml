@@ -1,0 +1,18 @@
+%h2
+  Contact Us
+
+  .clearfix
+    = label_tag :name
+    .input
+      = text_field_tag :name
+  .clearfix
+    = label_tag :email
+    .input
+      = text_field_tag :email
+  .clearfix
+    = label_tag :content
+    .input
+      = text_area_tag :content
+
+  .actions
+    = submit_tag("Submit", :class => "btn primary")

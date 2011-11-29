@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
   
   def hiw
+  
+  end
+  
+  def contact_us
     
   end
 end

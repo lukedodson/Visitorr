@@ -10,11 +10,13 @@ user =
     $("#pay_with_paypal").click ->
       $("#paypal_checkout").show()
       $("#billing_fields").hide()
+      $(".actions").hide()
       true
 
     $("#pay_with_card").click ->
       $("#paypal_checkout").hide()
       $("#billing_fields").show()
+      $(".actions").show()
       true
     
     $('#new_user').submit ->
@@ -40,3 +42,4 @@ user =
     else
       $('#stripe-error-message.alert-message.block-message.error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)
+      
