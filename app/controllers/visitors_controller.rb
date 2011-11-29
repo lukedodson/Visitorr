@@ -14,8 +14,8 @@ class VisitorsController < ApplicationController
     @user = User.find_by_id(params[:visitor][:user_id])
     @visitor = @user.visitors.build(params[:visitor])
     if @visitor.save
-       # Delayed::Job.enqueue(WelcomeJob.new(@visitor.id), :run_at => 2.days.from_now)
-      VisitorMailer.welcome_mailer(@visitor).deliver
+       Delayed::Job.enqueue(WelcomeJob.new(@visitor), :run_at => 2.days.from_now)
+      # VisitorMailer.welcome_mailer(@visitor).deliver
       redirect_to success_path, :notice => "Success! You will be contacted shortly!"
     else
       render :new
@@ -25,7 +25,7 @@ class VisitorsController < ApplicationController
   def destroy
     @visitor = Visitor.find_by_id(params[:id])
     if @visitor.destroy
-      redirect_to admin_path, :notice => "Visitor has been destroyed"
+      redirect_to admin_path, :notice => "Visitor has been deleted"
     else
       render admin_path, :notice => "Destroy failed"
     end
