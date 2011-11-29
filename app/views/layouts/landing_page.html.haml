@@ -8,7 +8,7 @@
     = javascript_include_tag :application
     = csrf_meta_tag
 
-  %body{ :id => "#{params[:controller].parameterize}_controller"  }
+  %body{ :id => "#{params[:controller].parameterize}"  }
     .topbar
       .navcontainer
         %h3= link_to image_tag('logo1.png'), root_path
@@ -20,6 +20,7 @@
             %li= link_to "Sign Out", sign_out_path
           - else
             %li= link_to "Get Started", get_started_path
+            %li= link_to "How it works", hiw_path
             %li= link_to "Sign In", sign_in_path
 
     #header

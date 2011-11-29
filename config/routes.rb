@@ -16,6 +16,7 @@ Visitorr::Application.routes.draw do
   match "success", :to => "visitors#success", :as => :success
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   match "admin", :to => "admin#visitors", :as => :admin
+  get 'how-it-works', :to => "pages#hiw", :as => :hiw
   
   get 'paypal/checkout', :to => "users#paypal_checkout"
   get 'paypal/update',   :to => "users#paypal_update"
