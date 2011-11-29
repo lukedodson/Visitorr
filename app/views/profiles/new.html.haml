@@ -31,6 +31,8 @@
             = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
             = javascript_include_tag "editor.js"
             = f.text_area :body, :class => "email_body"
+        %span.help-block
+          Information you would like your visitors to be aware of. Upcoming Events, Church information, Vision or Mission Statement, etc.
         .clearfix
           = f.label :video_url, "Video URL"
           .input
