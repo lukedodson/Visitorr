@@ -26,6 +26,8 @@
         .clearfix
           = f.label :body, "Email body"
           .input
+            = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
+            = javascript_include_tag "editor.js"
             = f.text_area :body, :class => "email_body"
         .clearfix
           = f.label :video_url, "Video URL"
