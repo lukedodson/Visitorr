@@ -9,7 +9,7 @@
               - user.errors.full_messages.each do |msg|
                 %p= msg
 
-        - unless user.payment_provided? || user.stripe_customer_token.present? || user.paypal_recurring_profile_token.present?
+        - unless user.payment_provided? || user.subscribed === true   
           .field
             = radio_button_tag :pay_with, :card, true
             = label_tag :pay_with_card do
@@ -76,7 +76,7 @@
             %span.note
               Payment has been provided. Click subscribe to complete your registration.
           - else
-            - unless user.payment_provided? || user.stripe_customer_token.present? || user.paypal_recurring_profile_token.present?    
+            - unless user.payment_provided? || user.subscribed === true   
               #credit-card
                 #credit-card-errors{:style => "display:none"}
                   #stripe-error-message.alert-message.block-message.error
