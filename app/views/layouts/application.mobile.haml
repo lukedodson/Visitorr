@@ -23,7 +23,8 @@
             - if flash.notice
               #notice.alert-message.block-message.success= flash.notice
         .org_name
-          %h3= "#{@user.name}"              
+          - if @user
+            %h3= "#{@user.name}"              
         = yield
         = debug(params) if Rails.env.development?
 
