@@ -56,13 +56,11 @@ class User < ActiveRecord::Base
   end
   
   def save_with_stripe_payment
-    if valid?
       customer = Stripe::Customer.create(description: email, plan: "Visitorr+", card: stripe_card_token)
       self.stripe_customer_token = customer.id
       self.subscribed = true
       self.last_4_digits = customer.active_card.last4
       save!
-    end
   rescue Stripe::InvalidRequestError => e
     logger.error "Stripe error while creating customer: #{e.message}"
     errors.add :base, "There was a problem with your credit card: #{e.message}"
