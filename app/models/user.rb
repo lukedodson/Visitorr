@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
   
   def save_with_stripe_payment
-      customer = Stripe::Customer.create(description: email, plan: "Visitorr+", card: stripe_card_token)
+      customer = Stripe::Customer.create(:description => email, :plan => "Visitorr+", :card => stripe_card_token)
       self.stripe_customer_token = customer.id
       self.subscribed = true
       self.last_4_digits = customer.active_card.last4

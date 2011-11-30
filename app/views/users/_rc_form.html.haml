@@ -60,14 +60,6 @@
             = f.hidden_field :last_4_digits
             = f.hidden_field :paypal_customer_token
             = f.hidden_field :paypal_payment_token
-          
-          - if user.last_4_digits.present?
-            #change-card.clearfix
-              %label Card
-              .input
-                %span
-                  Using card ending with #{user.last_4_digits}
-                  = link_to "(change)", "#"
 
         
           - if user.subscribed == true

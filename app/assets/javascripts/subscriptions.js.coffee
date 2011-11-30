@@ -43,3 +43,9 @@ user =
       $('#stripe-error-message.alert-message.block-message.error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)
       
+$("#change-card a").click ->
+   $("#change-card").hide()
+   $("#credit-card").show()
+   $("#credit_card_number").focus()
+   false
+      

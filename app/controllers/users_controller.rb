@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         @user.update_attributes(:subscribed => false, :paypal_recurring_profile_token => nil)
         redirect_to settings_path, :notice => "Your subscription has been cancelled."
       else
-        cu = Stripe::Customer.retrieve(@user.stripe_id)
+        cu = Stripe::Customer.retrieve(@user.stripe_customer_token)
         if cu.cancel_subscription
           @user.update_attributes(:subscribed => false, :last_4_digits => "")
           redirect_to settings_path, :notice => "You'll be back.. they always come back"
