@@ -33,5 +33,4 @@ class VisitorsController < ApplicationController
 
   def success
   end
-
 end
