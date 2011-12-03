@@ -5,7 +5,7 @@ class PaypalPayment
   
   def make_recurring
     process :request_payment
-    process :create_recurring_profile, period: :monthly, frequency: 1, start_at: Time.zone.now
+    process :create_recurring_profile, period: :monthly, frequency: 1, start_at: Time.zone.now, trial_period: :monthly, trial_length: 1, trial_frequency: 1
   end
   
   def checkout_details

@@ -13,7 +13,7 @@ gem 'stripe'
 gem 'jquery-rails'
 gem 'coffee-rails', "~> 3.1.1"
 gem 'delayed_job'
-gem 'paypal-recurring'
+gem 'paypal-recurring', git: "git://github.com/jhliberty/paypal-recurring.git"
 gem 'ckeditor'
 
 group :production do

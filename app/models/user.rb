@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
   validates_uniqueness_of     :name, :slug
+  validates_format_of         :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
 
 
   validates :email, :uniqueness => { :case_sensitive => false },
