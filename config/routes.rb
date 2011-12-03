@@ -8,6 +8,7 @@ Visitorr::Application.routes.draw do
   resources :sessions
   resources :users
   resources :visitors
+  resources :contacts
   
   match "signin", :to => "sessions#new", :as =>:sign_in
   match "settings" => "users#edit", :as => :settings #refactor this to be account or settings
@@ -17,7 +18,7 @@ Visitorr::Application.routes.draw do
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   match "admin", :to => "admin#visitors", :as => :admin
   get 'how-it-works', :to => "pages#hiw", :as => :hiw
-  get 'contact-us', :to => "pages#contact_us", :as => :contact_us
+  get 'contact-us', :to => "contacts#new", :as => :contact_us
   
   get 'paypal/checkout', :to => "users#paypal_checkout"
   get 'paypal/update',   :to => "users#paypal_update"

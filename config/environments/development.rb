@@ -29,9 +29,9 @@ Visitorr::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
-  # development test settings - johnhenry.liberty@gmail.com
-  Stripe.api_key = "bNkiv1IODUi0caelH9fJCZIQOEhAwXE5"
-  STRIPE_PUBLIC_KEY = "pk_1bBAOyEcLIiPQzHQv6Qck5SueApPy"
+  # development test settings - lukedodson@gmail.com
+  Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS"
+  STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6"
   
 
   ActionMailer::Base.smtp_settings = {  

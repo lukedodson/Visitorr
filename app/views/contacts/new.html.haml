@@ -1,0 +1,21 @@
+%h2
+  Contact Us
+.row
+  .span10.columns
+    %fieldset
+      = form_for @contact, :html => {:class => 'form-stacked'} do |f|
+        .clearfix
+          = f.label :name
+          .input
+            = f.text_field :name
+        .clearfix
+          = f.label :email
+          .input
+            = f.text_field :email
+        .clearfix
+          = f.label :content
+          .input
+            = f.text_area :content
+
+        .actions
+          = f.submit("Submit", :class => "btn primary")
