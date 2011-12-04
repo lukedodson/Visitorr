@@ -32,5 +32,6 @@ class VisitorsController < ApplicationController
   end
 
   def success
+    @user = current_user
   end
 end
