@@ -29,7 +29,7 @@
         #headtext
           %h2 Welcome to Visitorr!
           %h4 Get connected, stay connected.
-          %p With Visitorr you can make it easy and simple for your visitors to leave their contact details with you at your Sunday service. Visitors to your church will receive a warm welcome video Monday morning thanking them for their visit and providing them with the next steps to connect with your church and its community. You can customize the video and the contents of your message to your visitor once you have your account setup. 
+          %p  
           %p= button_to "Get started", get_started_path, :class => "getstarted"
         #headimg
           %span= image_tag("iphone4.png")
@@ -47,8 +47,10 @@
           .imagebox
             = image_tag("connect.png")
           .imagebox
-            = image_tag("growth.png")      
+            = image_tag("growth.png")   
             
+
+  = render "layouts/footer"
                         
 
 

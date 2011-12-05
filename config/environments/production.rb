@@ -72,16 +72,14 @@ Visitorr::Application.configure do
   ActionMailer::Base.delivery_method = :smtp
   
   # # production test settings - lukedodson@gmail.com
-  # Stripe.api_key = "3JeOUAMyRSOA19bV9AEZHR9qtvBU7SJS" 
-  # STRIPE_PUBLIC_KEY = "pk_yBQGz2OLWCiagaeAMDIMeXuXCBHC6" 
-  # development test settings - johnhenry.liberty@gmail.com
-  Stripe.api_key = "bNkiv1IODUi0caelH9fJCZIQOEhAwXE5"
-  STRIPE_PUBLIC_KEY = "pk_1bBAOyEcLIiPQzHQv6Qck5SueApPy"
+   Stripe.api_key = "NSTmn7lWSBfPnVxS1Kq0gX6vc1RJlUR2" 
+   STRIPE_PUBLIC_KEY = "pk_tdj3oBfjVffhgrNjQrKvnqF6hoq9O" 
+
   
   PayPal::Recurring.configure do |config|
-    config.sandbox = true
-    config.username = "mercha_1322029739_biz_api1.representativestrategies.com"
-    config.password = "1322029777"
-    config.signature = "ATwVOlj-u4B.C8BxuGYLRapce8kUA9poCNL-EemM1wFiw0x82go9SGmb"
+    config.sandbox = false
+    config.username = "thevisitorr_api1.gmail.com"
+    config.password = "VW8TW6CFF9E5ACAK"
+    config.signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31AuODwHrbEd.omLpU4abgIdBDhwxZ"
   end
 end
