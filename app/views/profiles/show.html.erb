@@ -14,4 +14,5 @@
   <h5 id="body:">Email Body:</h1>
 </p>
 <p class="email_body"><%= @profile.body.html_safe %></p>
+<%= link_to "Send test email", test_email_path %> <br />
 <%= link_to "Edit profile", edit_profile_path %>

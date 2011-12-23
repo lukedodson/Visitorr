@@ -39,4 +39,16 @@ class ProfilesController < ApplicationController
       render 'edit'
     end
   end
+  
+  def test_email
+    @user = current_user
+    @profile = Profile.find_by_user_id(@user.id)
+    if @profile
+      TestMailer.test(@user).deliver
+      redirect_to profile_path(@user), :notice => "Test email has been sent"
+    else
+      flash.now.notice = "You need to save your profile first."
+      render new_profile_path
+    end
+  end
 end

@@ -11,12 +11,13 @@ Visitorr::Application.routes.draw do
   resources :contacts
   
   match "signin", :to => "sessions#new", :as =>:sign_in
-  match "settings" => "users#edit", :as => :settings #refactor this to be account or settings
+  match "settings" => "users#edit", :as => :settings 
   match "get-started", :to => "users#new", :as => :get_started
   match "signout", :to => "sessions#destroy", :as => :sign_out
   match "success", :to => "visitors#success", :as => :success
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   match "admin", :to => "admin#visitors", :as => :admin
+  match "test-email", :to => "profiles#test_email", :as => "test_email"
   get 'how-it-works', :to => "pages#hiw", :as => :hiw
   get 'contact-us', :to => "contacts#new", :as => :contact_us
   
