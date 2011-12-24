@@ -9,6 +9,7 @@ Visitorr::Application.routes.draw do
   resources :users
   resources :visitors
   resources :contacts
+  resources :password_resets
   
   match "signin", :to => "sessions#new", :as =>:sign_in
   match "settings" => "users#edit", :as => :settings 
@@ -18,6 +19,7 @@ Visitorr::Application.routes.draw do
   match "cancel_subscription", :to => "users#cancel_subscription", :as => "cancel_subscription"
   match "admin", :to => "admin#visitors", :as => :admin
   match "test-email", :to => "profiles#test_email", :as => "test_email"
+  match "reset-password", :to => "sessions#reset_password", :as => "reset_password"
   get 'how-it-works', :to => "pages#hiw", :as => :hiw
   get 'contact-us', :to => "contacts#new", :as => :contact_us
   

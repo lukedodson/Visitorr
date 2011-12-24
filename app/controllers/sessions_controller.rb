@@ -16,4 +16,8 @@ class SessionsController < ApplicationController
     logout
     redirect_to root_url, :notice => "Logged out!"
   end
+  
+  def reset_password
+    
+  end
 end
