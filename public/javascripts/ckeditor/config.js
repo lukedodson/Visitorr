@@ -10,26 +10,29 @@ CKEDITOR.editorConfig = function( config )
 	// config.uiColor = '#AADC6E';
 	
   /* Filebrowser routes */
+	
+  config.filebrowserUploadUrl = null;
+
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
-  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
+  config.filebrowserBrowseUrl = false;
 
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Flash dialog.
-  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
+  config.filebrowserFlashBrowseUrl = false;
 
   // The location of a script that handles file uploads in the Flash dialog.
-  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
+  config.filebrowserFlashUploadUrl = false;
   
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Link tab of Image dialog.
-  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
+  config.filebrowserImageBrowseLinkUrl = false;
 
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Image dialog.
-  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
+  config.filebrowserImageBrowseUrl = false;
 
   // The location of a script that handles file uploads in the Image dialog.
-  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
+  config.filebrowserImageUploadUrl = false;
   
   // The location of a script that handles file uploads.
-  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.filebrowserUploadUrl = false;
   
   // Rails CSRF token
   config.filebrowserParams = function(){
@@ -70,7 +73,7 @@ CKEDITOR.editorConfig = function( config )
       [ 'Source' ],
       [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] ,
       [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] ,
-      [ 'Link','Unlink','Anchor' ],
+      [ 'Link','Unlink','Anchor', 'Image' ],
       '/',
       [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ],
       [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
