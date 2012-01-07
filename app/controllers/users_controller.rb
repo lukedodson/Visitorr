@@ -2,8 +2,12 @@ class UsersController < ApplicationController
   before_filter :require_login, :only => [:edit, :update]
 
   def new
-    @plan = Plan.find(params[:plan_id])
-    @user = User.new
+    if params[:plan_id]
+      plan = Plan.find(params[:plan_id])
+      @user = plan.users.build
+    else
+      redirect_to plans_path
+    end
     if params[:PayerID]
       @user.paypal_customer_token = params[:PayerID]
       @user.paypal_payment_token = params[:token]
@@ -63,14 +67,15 @@ class UsersController < ApplicationController
   end
   
   def paypal_checkout
-    @user = current_user || User.new 
+    plan = Plan.find(params[:plan_id])
+    @user = current_user || plan.users.build 
     if current_user
       redirect_to @user.paypal.checkout_url(
       return_url: settings_url,
       cancel_url: settings_url)
     else
       redirect_to @user.paypal.checkout_url(
-      return_url: new_user_url,
+      return_url: new_user_url(:plan_id => plan.id),
       cancel_url: root_url)
     end
   end  

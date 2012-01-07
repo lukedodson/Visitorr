@@ -1,6 +1,6 @@
 class PaypalPayment
   def initialize(user)
-    @user = user    
+    @user = user
   end
   
   def make_recurring
@@ -25,8 +25,8 @@ class PaypalPayment
     options = options.reverse_merge(
       token: @user.paypal_payment_token,
       payer_id: @user.paypal_customer_token,
-      description: "Visitorr+",
-      amount: 9.99,
+      description: @user.plan.name,
+      amount: @user.plan.price,
       currency: "USD"
     )
     response = PayPal::Recurring.new(options).send(action)

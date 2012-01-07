@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :stripe_card_token, :paypal_payment_token
 
-  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token, :paypal_recurring_profile_token
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token, :paypal_recurring_profile_token, :plan_id
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   end
   
   def save_with_stripe_payment
-      customer = Stripe::Customer.create(:description => email, :plan => "Visitorr+", :card => stripe_card_token)
+      customer = Stripe::Customer.create(:description => email, :plan => plan_id, :card => stripe_card_token)
       self.stripe_customer_token = customer.id
       self.subscribed = true
       self.last_4_digits = customer.active_card.last4
