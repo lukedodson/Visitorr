@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :require_login, :only => [:edit, :update]
 
   def new
+    @plan = Plan.find(params[:plan_id])
     @user = User.new
     if params[:PayerID]
       @user.paypal_customer_token = params[:PayerID]

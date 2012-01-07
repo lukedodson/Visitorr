@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111224004327) do
+ActiveRecord::Schema.define(:version => 20120107002653) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20111224004327) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "plans", :force => true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "email_limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", :force => true do |t|
     t.string   "address"
@@ -63,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20111224004327) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.integer  "plan_id"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
