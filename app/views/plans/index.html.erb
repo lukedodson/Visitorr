@@ -2,10 +2,9 @@
   <h1>Plans</h1>
   <%= image_tag "pricing.png" %>
   <% @plans.each do |plan| %>
-    <div class="signup">
-      <%= number_to_currency plan.price %>
+    <div class="signup" style="float:right;margin-right:10em;">
       <%= button_to "Sign up", get_started_path(:plan_id => plan.id), :class => "btn primary" %>
     </div>
   <% end %>
-  <div class="clear"></div>
+  <div class="clear" style="float:clear;"><br/><br/></div>
 </div>
