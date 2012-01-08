@@ -5,8 +5,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>Status</th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @visitors.each do |visitor| %>
@@ -18,6 +17,6 @@
   </tr>
 <% end %>
 </table>
-
+    <span class="right" style="float:right;font-weight:bold;margin-right:10px;"><%= pluralize(@visitors.count, "visitor" )%></span>
 <br />
 
