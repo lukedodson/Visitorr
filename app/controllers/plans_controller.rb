@@ -5,7 +5,7 @@ class PlansController < ApplicationController
   end
   
   def update
-    @plans = Plan.all
+    @plans = Plan.order("price desc")
     @user = current_user
   end
 end
