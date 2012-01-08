@@ -1,14 +1,12 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_unique_slug :column => :slug, :subject => :name
-  # before_save :update_stripe
+
   before_save :make_slug
   has_many :visitors, :dependent => :destroy
   has_one :profile, :dependent => :destroy
   belongs_to :plan
-  
-  # attr_accessor :stripe_token
-  
+    
   attr_accessor :stripe_card_token, :paypal_payment_token
 
   attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token, :paypal_recurring_profile_token, :plan_id
@@ -17,7 +15,6 @@ class User < ActiveRecord::Base
   validates_presence_of       :password, :on => :create
   validates_uniqueness_of     :name, :slug
   validates_format_of         :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
-
 
   validates :email, :uniqueness => { :case_sensitive => false },
                     :presence => true
@@ -81,6 +78,19 @@ class User < ActiveRecord::Base
     errors.add :base, "There was a problem with your credit card."
   false
   end
+
+  def make_slug
+    self.slug = self.name.parameterize
+  end
+  
+  def payment_provided?
+    stripe_card_token.present? || paypal_payment_token.present? 
+  end
+  
+  
+  # before_save :update_stripe  
+  # attr_accessor :stripe_token
+  
   # 
   # def update_stripe
   #   if stripe_token.present?
@@ -108,12 +118,5 @@ class User < ActiveRecord::Base
   # logger.error "Stripe error while creating customer: #{e.message}"  
   # errors.add :base, "There was a problem with your credit card." 
   # end
-
-  def make_slug
-    self.slug = self.name.parameterize
-  end
   
-  def payment_provided?
-    stripe_card_token.present? || paypal_payment_token.present? 
-  end
 end
