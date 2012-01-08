@@ -45,8 +45,8 @@ class UsersController < ApplicationController
     @user = current_user      
     if @user.update_attributes(params[:user])
       redirect_to settings_path, :notice => "Profile Updated!"
-    else
-      render settings_path, :notice => "I'm sorry, that didn't save. Please try again."
+    else 
+      redirect_to settings_path, :notice => "I'm sorry, that didn't save. Please try again."
     end
   end
 

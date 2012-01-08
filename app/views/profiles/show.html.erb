@@ -15,4 +15,4 @@
 </p>
 <p class="email_body"><%= @profile.body.html_safe %></p>
 <%= button_to "Send Test", test_email_path, :class => "btn primary" %> 
-<%= button_to "Edit profile", edit_profile_path, :class => "btn primary" %>
+<%= button_to "Edit profile", edit_profile_path, :class => "btn primary", :method => :get %>
