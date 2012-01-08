@@ -4,7 +4,7 @@
   <% @plans.each do |plan| %>
     <div class="signup">
       <%= number_to_currency plan.price %>
-      <%= button_to "Sign up", get_started_path(:plan_id => plan.id) %>
+      <%= button_to "Sign up", get_started_path(:plan_id => plan.id), :class => "btn primary" %>
     </div>
   <% end %>
   <div class="clear"></div>
