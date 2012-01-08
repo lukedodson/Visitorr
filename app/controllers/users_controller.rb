@@ -44,11 +44,9 @@ class UsersController < ApplicationController
   def update
     @user = current_user      
     if @user.update_attributes(params[:user])
-      if @user.save_with_payment
-        redirect_to settings_path, :notice => "Profile updated"
-      end
+      redirect_to settings_path, :notice => "Profile Updated!"
     else
-      render profile_path, :notice => "I'm sorry, that didn't save. Please try again."
+      render settings_path, :notice => "I'm sorry, that didn't save. Please try again."
     end
   end
 
