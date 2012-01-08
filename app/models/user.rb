@@ -68,6 +68,19 @@ class User < ActiveRecord::Base
     errors.add :base, "There was a problem with your credit card."
     false
   end
+  
+  def update_with_stripe
+    customer = Stripe::Customer.retrieve(stripe_customer_token)
+    customer.card = stripe_token
+    customer.save
+    self.subscribed = true
+    self.last_4_digits = customer.active_card.last4
+    save!
+  rescue Stripe::InvalidRequestError => e
+    logger.error "Stripe error while creating customer: #{e.message}"
+    errors.add :base, "There was a problem with your credit card."
+  false
+  end
   # 
   # def update_stripe
   #   if stripe_token.present?

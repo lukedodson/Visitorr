@@ -26,6 +26,14 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = current_user
+    if @user.subscribed == false
+      if params[:plan_id]
+        @user.plan_id = params[:plan_id]
+      else
+        redirect_to update_plans_path
+      end
+    end
     if params[:PayerID]
       @user = current_user
       @user.update_with_paypal(params[:token], params[:PayerID])
@@ -34,9 +42,11 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    @user = current_user      
     if @user.update_attributes(params[:user])
-      redirect_to settings_path, :notice => "Profile updated"
+      if @user.save_with_payment
+        redirect_to settings_path, :notice => "Profile updated"
+      end
     else
       render profile_path, :notice => "I'm sorry, that didn't save. Please try again."
     end
@@ -71,7 +81,7 @@ class UsersController < ApplicationController
     @user = current_user || plan.users.build 
     if current_user
       redirect_to @user.paypal.checkout_url(
-      return_url: settings_url,
+      return_url: settings_url(:plan_id => plan.id),
       cancel_url: settings_url)
     else
       redirect_to @user.paypal.checkout_url(

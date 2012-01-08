@@ -1,6 +1,7 @@
 Visitorr::Application.routes.draw do
 
-  get "plans/index"
+  # get "plans/index"
+  
 
   # get "profiles/show"
   # 
@@ -23,6 +24,7 @@ Visitorr::Application.routes.draw do
   match "test-email", :to => "profiles#test_email", :as => "test_email"
   match "reset-password", :to => "sessions#reset_password", :as => "reset_password"
   match "plans", :to => "plans#index", :as => :plans
+  match "update-plans", :to => "plans#update", :as => :update_plans
   get 'how-it-works', :to => "pages#hiw", :as => :hiw
   get 'contact-us', :to => "contacts#new", :as => :contact_us
   

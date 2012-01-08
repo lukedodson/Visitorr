@@ -40,7 +40,7 @@ user =
       $('#user_stripe_card_token').val(response.id)
       $('#new_user')[0].submit()
     else
-      $('#stripe-error-message.alert-message.block-message.error').text(response.error.message)
+      $('#stripe-error-message.alert-message.block-message.error').text(response.status)
       $('input[type=submit]').attr('disabled', false)
       
 $("#change-card a").click ->
