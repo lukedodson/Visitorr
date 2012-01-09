@@ -71,13 +71,10 @@ Visitorr::Application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
   
-  # # # production test settings - lukedodson@gmail.com
-  #  Stripe.api_key = "NSTmn7lWSBfPnVxS1Kq0gX6vc1RJlUR2" 
-  #  STRIPE_PUBLIC_KEY = "pk_tdj3oBfjVffhgrNjQrKvnqF6hoq9O" 
+  # # production test settings - lukedodson@gmail.com
+   Stripe.api_key = "NSTmn7lWSBfPnVxS1Kq0gX6vc1RJlUR2" 
+   STRIPE_PUBLIC_KEY = "pk_tdj3oBfjVffhgrNjQrKvnqF6hoq9O" 
 
-  # dev test jhliberty
-  Stripe.api_key = "bNkiv1IODUi0caelH9fJCZIQOEhAwXE5"
-  STRIPE_PUBLIC_KEY = "pk_1bBAOyEcLIiPQzHQv6Qck5SueApPy"
   
   PayPal::Recurring.configure do |config|
     config.sandbox = false
