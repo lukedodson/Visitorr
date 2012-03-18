@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %title= "Visitorr"
+    = stylesheet_link_tag :application
+    = tag :meta, :name => "stripe-key", :content => "pk_1bBAOyEcLIiPQzHQv6Qck5SueApPy"
+    = javascript_include_tag :application
+    = csrf_meta_tag
+
+  %body{ :id => "#{params[:controller].parameterize}_controller"  }
+    .topbar
+      .navcontainer
+        %h3= link_to image_tag('logo1.png'), root_path
+        %ul.nav
+          - if current_user
+            %li= link_to "Visitors", admin_path
+            %li= link_to "Profile", profile_path(current_user)
+            %li= link_to "Settings", settings_path
+            %li= link_to "Sign Out", sign_out_path
+          - else
+            %li= link_to "Get Started", get_started_path
+            %li= link_to "How It Works", hiw_path
+            %li= link_to "Contact Us", contact_us_path
+            %li= link_to "Sign In", sign_in_path
+
+    #header
+    .container
+      .main
+        .row
+          .span6.columns
+            - if flash.notice
+              #notice.alert-message.block-message.success= flash.notice
+        = yield
+        = debug(params) if Rails.env.development?
+
+    = render "layouts/footer"

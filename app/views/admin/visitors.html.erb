@@ -1,0 +1,23 @@
+<h1>Visitors</h1>
+
+<table class="zebra-striped">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+
+<% @visitors.each do |visitor| %>
+  <tr>
+    <td><%= visitor.name %></td>
+    <td><%= visitor.email %></td>
+    <td><%= visitor.welcomed ? "Contacted" : "New" %></td>
+    <td><%= link_to 'Delete', visitor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+  
+    <span class="right" style="float:right;font-weight:bold;margin-right:10px;"><%= pluralize(@visitors.count, "visitor" )%></span>
+<br />
+

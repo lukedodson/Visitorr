@@ -1,0 +1,8 @@
+<p>
+  <%= @user.profile.body.html_safe %>
+</p>
+<p>
+  <%= @user.profile.video_url %>
+</p>
+
+<iframe width="560" height="315" src="<%= @user.profile.video_url %>" frameborder="0" allowfullscreen></iframe>

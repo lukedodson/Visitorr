@@ -1,0 +1,106 @@
+.row
+  .span6.columns
+    %fieldset
+      = form_for user, :html => {:class => 'form-stacked'} do |f|
+        - if user.errors.any?
+          .alert-message.block-message.error
+            %p #{pluralize(user.errors.count, "problem")} with your registration:
+            .errors
+              - user.errors.full_messages.each do |msg|
+                %p= msg
+
+        - unless user.payment_provided? || user.subscribed === true   
+          .field
+            = radio_button_tag :pay_with, :card, true
+            = label_tag :pay_with_card do
+              = image_tag "visa.png"
+              = image_tag "mastercard.png"
+              = image_tag "discover.png"
+              = image_tag "american_express.png"
+              = image_tag "jcb.png"
+            = radio_button_tag :pay_with, :paypal
+            = label_tag :pay_with_paypal do
+              = image_tag "paypal.png"
+            %br/
+            %br/
+        #paypal_checkout{:style => "display:none"}
+          = link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path(plan_id: @user.plan_id)
+
+        #billing_fields
+          .clearfix
+            = f.label :name, "Organization name"
+            .input
+              = f.text_field :name, :class => "field"
+              - if defined? editing
+                %span.help-block  
+                  This is your url - visitors can find you at:
+                  = link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", "/#{user.slug}" 
+              - else
+                %span.help-block 
+                  Organization name will appear as URL ex. www.visitorr.com/YOURnameHERE  keep it short
+
+          .clearfix
+            = f.label :email
+            .input
+              = f.text_field :email, :class => "field"
+
+          .clearfix
+            = f.label :password
+            .input
+              = f.password_field :password, :class => "field"
+              - if defined? editing
+                %span.help-block Leave blank to keep your current password
+
+          .clearfix
+            = f.label :password_confirmation
+            .input
+              = f.password_field :password_confirmation, :class => "field"
+
+            = f.hidden_field :stripe_card_token
+            = f.hidden_field :last_4_digits
+            = f.hidden_field :paypal_customer_token
+            = f.hidden_field :paypal_payment_token
+            = f.hidden_field :plan_id
+
+        
+          - if user.subscribed == true
+            #cancel-subscription.clearfix
+              = link_to "Cancel subscription", cancel_subscription_path
+
+        
+        
+          %noscript
+            %p
+              This form requires Javascript to use
+
+          - if user.payment_provided?
+            %span.note
+              Payment has been provided. Click subscribe to complete your registration.
+          - else
+            - unless user.payment_provided? || user.subscribed === true   
+              #credit-card
+                #credit-card-errors{:style => "display:none"}
+                  #stripe-error-message.alert-message.block-message.error
+
+                / these fields are disabled before submission and are never transmitted back to rails
+                .clearfix
+                  = label_tag :card_number, "Credit Card Number"
+                  .input
+                    = text_field_tag :card_number, nil, name: nil
+
+                .clearfix
+                  = label_tag :card_code, "Security Code on Card (CVV)"
+                  .input
+                    = text_field_tag :card_code, nil, name: nil
+
+                .clearfix
+                  = label_tag :card_month, "Card Expiration"
+                  .input
+                    = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "medium"}
+                    = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "small"}
+
+                  /empty
+                %span.note
+                  Your credit card details will be sent directly to our payment processor
+        .actions
+          = f.submit((defined?(editing) ? "Update" : "Subscribe"), :class => "btn primary")

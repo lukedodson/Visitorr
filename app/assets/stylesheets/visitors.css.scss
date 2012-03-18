@@ -1,0 +1,51 @@
+// Place all the styles related to the visitors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#visitors_mobile{
+	width:320px;
+	margin:0 auto;
+	height:460px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	
+	.mobile.navcontainer{
+		width:320px;
+		margin: 0 auto;
+	}
+
+	.mobile.topbar h3
+	{
+		position: relative;
+		top:5px;
+		color: #fff;
+		text-indent:15px;
+	}
+
+	.row .spanmob{
+		width:320px;
+		display:inline;
+		float:left;
+		margin-left:20px;
+	}
+
+	.mobile.container{
+	  width:320px;
+	  margin:0 auto;
+	}
+	
+	.mobile.main{
+		padding-top:0;
+	}
+	
+	.mobile.clearfix{
+		padding-bottom:10px;
+	}
+	
+	.org_name h3{
+	  padding-left: 10px;
+	  margin-left: 10px;
+	}
+}
