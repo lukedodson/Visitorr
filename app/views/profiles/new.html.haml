@@ -1,0 +1,49 @@
+.row
+  .span10.columns
+    %fieldset
+      = form_for @profile, :html => {:class => 'form-stacked'} do |f|
+        - if @profile.errors.any?
+          .alert-message.block-message.error
+            %p #{pluralize(@profile.errors.count, "problem")} with your registration:
+            .errors
+              - @profile.errors.full_messages.each do |msg|
+                %p= msg
+
+
+
+        .clearfix
+          = f.label "Organization's Physical Address"
+          .input
+            = f.text_field :address, :class => "field"
+        .clearfix
+          = f.label "Organizations Phone Number"
+          .input
+            = f.text_field :phone, :class => "field"
+        .clearfix
+          = f.label :subject, "Email subject"
+          .input
+            = f.text_field :subject, :class => "field"
+        %span.help-block
+          The Subject line your visitors will see in their inbox on Monday morning.
+        .clearfix
+          = f.label :body, "Email body"
+          .input
+            = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
+            = javascript_include_tag "editor.js"
+            = f.text_area :body, :class => "email_body"
+        %span.help-block
+          Information you would like your visitors to be aware of. Upcoming Events, Church information, Vision or Mission Statement, etc.
+        .clearfix
+          = f.label :video_url, "Video URL"
+          .input
+            = f.text_field :video_url, :class => "field"
+        %span.note Upload your video to 
+        = link_to "YouTube", "http://youtube.com/my_webcam"
+        then click 
+        %br/ 
+        "view on video page" and copy the url
+        %br/
+        in the address bar and paste it here.
+
+        .actions
+          = f.submit("Update", :class => "btn primary")

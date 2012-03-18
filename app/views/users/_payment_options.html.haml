@@ -1,0 +1,15 @@
+.field
+  = radio_button_tag :pay_with, :card, true
+  = label_tag :pay_with_card do
+    = image_tag "visa.png"
+    = image_tag "mastercard.png"
+    = image_tag "discover.png"
+    = image_tag "american_express.png"
+  = radio_button_tag :pay_with, :paypal
+  = label_tag :pay_with_paypal do
+    = image_tag "paypal.png"
+    %br/
+    %br/
+    
+#paypal_checkout{:style => "display:none"}
+  = link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path

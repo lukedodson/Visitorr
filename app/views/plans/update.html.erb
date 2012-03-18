@@ -1,0 +1,16 @@
+<div id="plans">
+  <h1>Plans</h1>
+  <div style="z-index:-10;">
+      <%= image_tag "pricing.gif" %>
+  </div>
+  <div class="plan1" style="float:right;position:relative;top:-100px;right:2px;">
+    <%= link_to image_tag("signup-blk.png"), get_started_path(:plan_id => 3) %>    
+  </div>
+  <div class="plan2" style="float:right;position:relative;top:-100px;right:60px;">
+    <%= link_to image_tag("signup-red.png"), get_started_path(:plan_id => 2) %>    
+  </div>
+  <div class="plan3" style="float:right;position:relative;top:-100px;right:115px;">
+    <%= link_to image_tag("signup-blk.png"), get_started_path(:plan_id => 1) %>    
+  </div>
+  <div class="clear" style="float:clear;"><br/><br/></div>
+</div>

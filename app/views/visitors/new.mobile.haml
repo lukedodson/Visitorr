@@ -1,0 +1,31 @@
+.row
+  .spanmob.columns
+    %fieldset
+      = form_for @visitor, :html => {:class => 'form-stacked'} do |f|
+        - if @visitor.errors.any?
+          .alert-message.block-message.error
+            %p #{pluralize(@visitor.errors.count, "problem")} with your registration:
+            .errors
+              - @visitor.errors.full_messages.each do |msg|
+                %p= msg
+
+
+
+        .clearfix
+          = f.label :name
+          .input
+            = f.text_field :name, :class => "field"
+        .clearfix
+          = f.label :email
+          .input
+            = f.text_field :email, :class => "field"
+        .mobile.clearfix
+          
+          .input
+            = f.hidden_field :user_id, :class => "field"
+
+          %span.note
+            We take your privacy seriously and will <br/> never spam or sell your email.
+	 
+        .actions
+          = f.submit("Submit", :class => "btn primary")
