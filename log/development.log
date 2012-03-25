@@ -9751,3 +9751,150 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2011-12-12 15:50:51 -0600
 Served asset /visitors.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to SorceryCore (20111114232457)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111114232457')[0m
+Migrating to SorceryRememberMe (20111114232458)
+  [1m[35m (2.0ms)[0m  ALTER TABLE "users" ADD "remember_me_token" varchar(255) DEFAULT NULL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "remember_me_token_expires_at" datetime DEFAULT NULL[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_users_on_remember_me_token" ON "users" ("remember_me_token")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111114232458')
+Migrating to CreateVisitors (20111115001056)
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "visitors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111115001056')
+Migrating to AddSlugColumnsToUsers (20111115002709)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "slug" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111115002709')[0m
+Migrating to AddAdditionalInfoToUsers (20111115013912)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "address" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "phone" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "video" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111115013912')[0m
+Migrating to AddStripeColumnsToUsers (20111116022442)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "last_4_digits" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "stripe_id" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "subscribed" boolean DEFAULT 'f'
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111116022442')[0m
+Migrating to AddEmailColumnsToUsers (20111116093626)
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "subject" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "email_body" text[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111116093626')
+Migrating to AddWelcomedBooleanToVisitors (20111116143227)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "visitors" ADD "welcomed" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111116143227')
+Migrating to CreateDelayedJobs (20111120002243)
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("delayed_jobs")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111120002243')
+Migrating to CreateProfiles (20111120015600)
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar(255), "phone" varchar(255), "video_url" varchar(255), "subject" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111120015600')
+Migrating to AddStripeToUsers (20111123122721)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "stripe_customer_token" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111123122721')
+Migrating to AddPaypalToUsers (20111126041106)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "paypal_customer_token" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "paypal_recurring_profile_token" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111126041106')[0m
+Migrating to AddResetPasswordToUsers (20111224004327)
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "reset_password_token" varchar(255) DEFAULT NULL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "reset_password_token_expires_at" datetime DEFAULT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "reset_password_email_sent_at" datetime DEFAULT NULL
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111224004327')[0m
+Migrating to CreatePlans (20120107000350)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "plans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "price" decimal, "email_limit" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120107000350')[0m
+Migrating to AddPlanIdToUsers (20120107002653)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "plan_id" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120107002653')[0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("delayed_jobs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('delayed_jobs_priority')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("plans")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("profiles")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_remember_me_token')[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("visitors")
+
+
+Started GET "/" for 127.0.0.1 at 2012-03-24 23:57:39 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/landing_page.html (0.4ms)
+Compiled application.css  (1142ms)  (pid 2309)
+Compiled application.js  (15ms)  (pid 2309)
+Compiled jquery.js  (4ms)  (pid 2309)
+Compiled jquery_ujs.js  (3ms)  (pid 2309)
+Compiled admin.js  (176ms)  (pid 2309)
+Compiled contacts.js  (6ms)  (pid 2309)
+Compiled editor.js  (1ms)  (pid 2309)
+Compiled pages.js  (1ms)  (pid 2309)
+Compiled plans.js  (1ms)  (pid 2309)
+Compiled profiles.js  (2ms)  (pid 2309)
+Compiled sessions.js  (2ms)  (pid 2309)
+Compiled subs.js  (1ms)  (pid 2309)
+Compiled subscriptions.js  (18ms)  (pid 2309)
+Compiled users.js  (0ms)  (pid 2309)
+Compiled visitors.js  (1ms)  (pid 2309)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2006ms (Views: 2005.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /jquery_ujs.js - 200 OK (14ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /admin.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /jquery.js - 200 OK (27ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /contacts.js - 200 OK (7ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /editor.js - 200 OK (15ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /pages.js - 200 OK (9ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /profiles.js - 200 OK (12ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /sessions.js - 200 OK (7ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /plans.js - 200 OK (10ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /subs.js - 200 OK (3ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /subscriptions.js - 200 OK (4ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /users.js - 200 OK (4ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-03-24 23:57:42 -0500
+Served asset /visitors.js - 200 OK (5ms)
