@@ -23,6 +23,7 @@ class AdminController < ApplicationController
           csv << [visitor.name, visitor.email]
         end
       end
+      
       send_data(email_csv, :type => 'text/csv', :filename => 'visitors_emails.csv')
     end
   end
