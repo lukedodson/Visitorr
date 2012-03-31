@@ -18,6 +18,10 @@
 <% end %>
 </table>
   
-    <span class="right" style="float:right;font-weight:bold;margin-right:10px;"><%= pluralize(@visitors.count, "visitor" )%></span>
+    <span class="right" style="float:right;font-weight:bold;margin-right:10px;">
+    	<%= pluralize(@visitors.count, "visitor" )%>
+    </span>
+    
+    <%= link_to 'Export Contacts', '/admin/export' %>
 <br />
 

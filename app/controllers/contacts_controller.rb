@@ -9,7 +9,9 @@ class ContactsController < ApplicationController
       ContactMailer.contact_us(@contact).deliver!
       redirect_to '/', :notice => "We have received your email. We will be in touch soon."
     else
-      render :contact_us
+      #render :contact_us
+      flash[:notice] = "There were errors sending your message."
+      render :action => "new"
     end
   end
 end

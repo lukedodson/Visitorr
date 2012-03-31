@@ -6,6 +6,14 @@
   .span10.columns
     %fieldset
       = form_for @contact, :html => {:class => 'form-stacked'} do |f|
+        - if @contact.errors.any?
+          .alert-message.block-message.error
+            %p #{pluralize(@contact.errors.count, "problem")} with your message:
+            .errors
+              - @contact.errors.full_messages.each do |msg|
+                %p= msg
+                
+                
         .clearfix
           = f.label :name
           .input
