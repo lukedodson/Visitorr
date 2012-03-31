@@ -120,3 +120,35 @@ class User < ActiveRecord::Base
   # end
   
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                              :integer         not null, primary key
+#  email                           :string(255)     not null
+#  crypted_password                :string(255)
+#  salt                            :string(255)
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  remember_me_token               :string(255)
+#  remember_me_token_expires_at    :datetime
+#  slug                            :string(255)
+#  name                            :string(255)
+#  address                         :string(255)
+#  phone                           :string(255)
+#  video                           :string(255)
+#  last_4_digits                   :string(255)
+#  stripe_id                       :string(255)
+#  subscribed                      :boolean         default(FALSE)
+#  subject                         :string(255)
+#  email_body                      :text
+#  stripe_customer_token           :string(255)
+#  paypal_customer_token           :string(255)
+#  paypal_recurring_profile_token  :string(255)
+#  reset_password_token            :string(255)
+#  reset_password_token_expires_at :datetime
+#  reset_password_email_sent_at    :datetime
+#  plan_id                         :integer
+#
+

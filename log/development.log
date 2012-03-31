@@ -17278,3 +17278,145 @@ Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 116ms (Views: 20.5ms | ActiveRecord: 1.1ms)
 =======
 >>>>>>> d6be7ed988e6f76cca339cd7576c80678a69f64c
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-31 11:04:27 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (43.4ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 666ms (Views: 295.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-03-31 11:04:29 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 82ms
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2012-03-31 11:04:30 -0500
+  Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered profiles/new.html.haml within layouts/application (17.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 200ms (Views: 30.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-03-31 11:04:31 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (11.4ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 121ms (Views: 29.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-03-31 11:11:01 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 60ms
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2012-03-31 11:11:01 -0500
+  Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered profiles/new.html.haml within layouts/application (4.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 123ms (Views: 20.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-03-31 11:11:17 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (18.8ms)
+Rendered users/edit.html.haml within layouts/application (21.6ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 54ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-03-31 11:11:19 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 88ms
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2012-03-31 11:11:19 -0500
+  Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered profiles/new.html.haml within layouts/application (5.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 120ms (Views: 19.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/profiles/edit" for 127.0.0.1 at 2012-03-31 11:15:01 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 91ms
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2012-03-31 11:15:01 -0500
+  Processing by ProfilesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered profiles/new.html.haml within layouts/application (14.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 138ms (Views: 31.6ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to SorceryCore (20111114232457)
+Migrating to SorceryRememberMe (20111114232458)
+Migrating to CreateVisitors (20111115001056)
+Migrating to AddSlugColumnsToUsers (20111115002709)
+Migrating to AddAdditionalInfoToUsers (20111115013912)
+Migrating to AddStripeColumnsToUsers (20111116022442)
+Migrating to AddEmailColumnsToUsers (20111116093626)
+Migrating to AddWelcomedBooleanToVisitors (20111116143227)
+Migrating to CreateDelayedJobs (20111120002243)
+Migrating to CreateProfiles (20111120015600)
+Migrating to AddStripeToUsers (20111123122721)
+Migrating to AddPaypalToUsers (20111126041106)
+Migrating to AddResetPasswordToUsers (20111224004327)
+Migrating to CreatePlans (20120107000350)
+Migrating to AddPlanIdToUsers (20120107002653)
+Migrating to AddQuestionsToProfiles (20120331162542)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "profiles" ADD "question_one" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "profiles" ADD "question_two" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "profiles" ADD "question_three" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "profiles" ADD "question_four" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "profiles" ADD "question_five" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120331162542')
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("delayed_jobs")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('delayed_jobs_priority')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("plans")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("profiles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_remember_me_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("visitors")[0m

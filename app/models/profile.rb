@@ -6,3 +6,19 @@ class Profile < ActiveRecord::Base
   validates_presence_of :subject, :body
 
 end
+
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id         :integer         not null, primary key
+#  address    :string(255)
+#  phone      :string(255)
+#  video_url  :string(255)
+#  subject    :string(255)
+#  body       :text
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
