@@ -1,18 +1,34 @@
 <p>
-  <h5 id="address">Organization's Physical Address:</h1> <%= @profile.address %>
+  <h5 id="address">Organization's Physical Address:</h5> <%= @profile.address %>
 </p>
 <p>
-  <h5 id="phone">Organization's Phone Number:</h1> <%= @profile.phone %>
+  <h5 id="phone">Organization's Phone Number:</h5> <%= @profile.phone %>
 </p>
 <p>
-  <h5 id="video url">Video url:</h1> <%= link_to @profile.video_url, @profile.video_url %>
+  <h5 id="video url">Video url:</h5> <%= link_to @profile.video_url, @profile.video_url %>
 </p>
 <p>
-  <h5 id="subject:">Email Subject</h1> <%= @profile.subject %>
+  <h5 id="subject:">Email Subject</h5> <%= @profile.subject %>
 </p>
 <p>
-  <h5 id="body:">Email Body:</h1>
+  <h5 id="body:">Email Body:</h5>
 </p>
 <p class="email_body"><%= @profile.body.html_safe %></p>
+
+<p>
+  <h5 class="questions">Question 1: </h5><h5><%= @profile.question_one %></h5>
+</p>
+<p>
+  <h5 class="questions">Question 2:</h5><h5><%= @profile.question_two %></h5>
+</p>
+<p>
+  <h5 class="questions">Question 3:</h5><h5><%= @profile.question_three %></h5>
+</p>
+<p>
+  <h5 class="questions">Question 4:</h5><h5><%= @profile.question_four %></h5>
+</p>
+<p>
+  <h5 class="questions">Question 5:</h5><h5><%= @profile.question_five %></h5>
+</p>
 <%= button_to "Send Test", test_email_path, :class => "btn primary" %> 
 <%= button_to "Edit profile", edit_profile_path, :class => "btn primary", :method => :get %>

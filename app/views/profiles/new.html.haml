@@ -44,6 +44,27 @@
         "view on video page" and copy the url
         %br/
         in the address bar and paste it here.
-        
+        %hr/
+        %span.note Enter some questions you would like your visitors to answer
+        .clearfix
+          = f.label "Question 1."
+          .input
+            = f.text_field :question_one, :class => "field"
+        .clearfix
+          = f.label "Question 2"
+          .input
+            = f.text_field :question_two, :class => "field"
+        .clearfix
+          = f.label "Question 3"
+          .input
+            = f.text_field :question_three, :class => "field"
+        .clearfix
+          = f.label "Question 4"
+          .input
+            = f.text_field :question_four, :class => "field"
+        .clearfix
+          = f.label "Question 5"
+          .input
+            = f.text_field :question_five, :class => "field"                                                
         .actions
           = f.submit("Update", :class => "btn primary")
