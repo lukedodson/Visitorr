@@ -12,6 +12,7 @@ class AdminController < ApplicationController
       flash.now.notice = "Go to your profile and setup your welcome email to allow your visitors to sign up for more information!"
     end
   end
+
   
   def export_emails
     @user = current_user
@@ -27,5 +28,4 @@ class AdminController < ApplicationController
       send_data(email_csv, :type => 'text/csv', :filename => 'visitors_emails.csv')
     end
   end
-  
 end

@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
       #render :contact_us
       flash[:notice] = "There were errors sending your message."
       render :action => "new"
+      render :contact_us
     end
   end
 end

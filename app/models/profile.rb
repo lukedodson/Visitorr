@@ -4,6 +4,5 @@ class Profile < ActiveRecord::Base
   attr_accessible :address, :phone, :video_url, :subject, :body
   
   validates_presence_of :subject, :body
-  
-  
+
 end

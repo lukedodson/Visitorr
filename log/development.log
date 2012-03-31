@@ -9751,6 +9751,7 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2011-12-12 15:50:51 -0600
 Served asset /visitors.js - 304 Not Modified (0ms)
+<<<<<<< HEAD
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
@@ -17275,3 +17276,5 @@ Started GET "/profiles/new" for 127.0.0.1 at 2012-03-31 10:00:51 -0500
 Rendered profiles/new.html.haml within layouts/application (5.3ms)
 Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 116ms (Views: 20.5ms | ActiveRecord: 1.1ms)
+=======
+>>>>>>> d6be7ed988e6f76cca339cd7576c80678a69f64c
