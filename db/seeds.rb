@@ -11,3 +11,4 @@ plans = Plan.create([{ name: "basic", price: 13, email_limit: 100 }, { name: "st
 user = User.create(name: "visitorr dev", email: "visitorrdev@gmail.com", password: "password", password_confirmation: "password", plan_id: plans.last )
 
 visitors = Visitor.create([{ name: "Ted Bundy", email: "ted@bundy.com", user_id: user.id}, { name: "Greg Maws" , email: "greg@maws.com", user_id: user.id }, { name: "Billy Dawson", email: "billy@dawson.com", user_id: user.id}])
+

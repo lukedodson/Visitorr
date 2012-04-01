@@ -1,4 +1,3 @@
-
 class VisitorsController < ApplicationController
  has_mobile_fu
   

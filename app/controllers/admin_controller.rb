@@ -1,3 +1,4 @@
+
 require 'fastercsv'
 require 'csv'
 
@@ -28,4 +29,5 @@ class AdminController < ApplicationController
       send_data(email_csv, :type => 'text/csv', :filename => 'visitors_emails.csv')
     end
   end
+
 end

@@ -17,7 +17,6 @@ gem 'delayed_job'
 gem 'paypal-recurring', git: "git://github.com/jhliberty/paypal-recurring.git"
 gem 'ckeditor'
 gem 'fastercsv'
-
 group :production do
   gem 'pg'
 end

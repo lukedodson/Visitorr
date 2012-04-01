@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, 
   :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token, 
   :paypal_recurring_profile_token, :plan_id
+  attr_accessible :email, :password, :password_confirmation, :name, :stripe_token, :last_4_digits, :subscribed, :stripe_customer_token, :stripe_card_token, :paypal_customer_token, :paypal_payment_token, :paypal_recurring_profile_token, :plan_id
 
   validates_confirmation_of   :password
   validates_presence_of       :password, :on => :create

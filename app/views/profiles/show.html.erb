@@ -30,5 +30,6 @@
 <p>
   <h5 class="questions">Question 5:</h5><h5><%= @profile.question_five %></h5>
 </p>
+
 <%= button_to "Send Test", test_email_path, :class => "btn primary" %> 
 <%= button_to "Edit profile", edit_profile_path, :class => "btn primary", :method => :get %>

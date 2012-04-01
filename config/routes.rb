@@ -33,5 +33,7 @@ Visitorr::Application.routes.draw do
   root :to => "pages#home"
 
   match ':id', :to => "visitors#new"
+
   match "/admin/export", :to => "admin#export_emails", :as => "export"
+
 end
