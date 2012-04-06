@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   before_save :make_slug
   has_many :visitors, :dependent => :destroy
   has_one :profile, :dependent => :destroy
+  accepts_nested_attributes_for :profile
   belongs_to :plan
     
   attr_accessor :stripe_card_token, :paypal_payment_token

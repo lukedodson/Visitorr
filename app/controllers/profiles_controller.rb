@@ -5,9 +5,13 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find_by_id(current_user.id)
     @profile = Profile.find_by_user_id(@user.id)
+    @visitor = Visitor.find_by_user_id(@user.id)
     if @profile.nil?
       redirect_to new_profile_path
     end
+    #if @visitor.nil?
+    #  redirect_to new_visitors_profiles
+    #end
   end
   
   def new
@@ -18,11 +22,17 @@ class ProfilesController < ApplicationController
   def create
     @user = User.find_by_id(current_user.id)
     @profile = @user.build_profile(params[:profile])
-    if @profile.save
-      redirect_to profile_path(@user), :notice => "Profile updated"
+    @visitor = Visitor.find_by_user_id(@user.id)
+    if @visitor.save
+      redirect_to visitor_path(@visitor), :notice => "Profile updated"
     else
       render 'new'
     end
+    #if @profile.save
+    #  redirect_to visitor_profile_path(@user), :notice => "Profile updated"
+    #else
+    #  render 'new'
+    #end
   end
   
   def edit

@@ -9,7 +9,13 @@ Visitorr::Application.routes.draw do
 
   resources :profiles
   resources :sessions
-  resources :users
+  resources :users do
+    resource :visitor
+  end
+  
+  resources :visitors do
+    resource :profile
+  end
   resources :visitors
   resources :contacts
   resources :password_resets
@@ -30,9 +36,12 @@ Visitorr::Application.routes.draw do
   
   get 'paypal/checkout', :to => "users#paypal_checkout"
   get 'paypal/update',   :to => "users#paypal_update"
+  
   root :to => "pages#home"
 
   match ':id', :to => "visitors#new"
+  
+  match ":profile", :to => "profiles#create"
 
   match "/admin/export", :to => "admin#export_emails", :as => "export"
 

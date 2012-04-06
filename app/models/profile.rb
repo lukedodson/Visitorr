@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
-  
+  has_many :visitors
   attr_accessible :address, :phone, :video_url, :subject, :body, :question_one, :question_two,
                   :question_three, :question_four, :question_five
   

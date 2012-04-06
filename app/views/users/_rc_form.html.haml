@@ -34,7 +34,7 @@
               - if defined? editing
                 %span.help-block  
                   This is your url - visitors can find you at:
-                  = link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", "/#{user.slug}" 
+                  = link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", new_user_visitor_path(user.id)
               - else
                 %span.help-block 
                   Organization name will appear as URL ex. www.visitorr.com/YOURnameHERE  keep it short
