@@ -27,13 +27,17 @@ class VisitorsController < ApplicationController
   end
 
   def destroy
-    @visitor = Visitor.find_by_id(params[:id])
-    if @visitor.destroy
-      redirect_to admin_path, :notice => "Visitor has been deleted"
-    else
-      render admin_path, :notice => "Destroy failed"
-    end
+    redirect_to admin_path, :alert => "Visitor deletion has been disabled for security reasons"
   end
+
+  # def destroy
+  #   @visitor = Visitor.find_by_id(params[:id])
+  #   if @visitor.destroy
+  #     redirect_to admin_path, :notice => "Visitor has been deleted"
+  #   else
+  #     render admin_path, :notice => "Destroy failed"
+  #   end
+  # end
 
   def success
     @user = current_user
