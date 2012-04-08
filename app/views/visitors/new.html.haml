@@ -3,34 +3,31 @@
 .row
   .span6.columns
     %fieldset
-      = form_for [@visitor,@profile], :url => new_profile_path(@profile), :html => {:class => 'form-stacked'} do |f|
+      = form_for @visitor, :html => {:class => 'form-stacked'} do |f|
         - if @visitor.errors.any?
           .alert-message.block-message.error
             %p #{pluralize(@visitor.errors.count, "problem")} with your registration:
             .errors
               - @visitor.errors.full_messages.each do |msg|
-                %p= msg  
-        = f.fields_for @visitor do |e|
-          .clearfix
-            = e.label :name
-            .input
-              = e.text_field :name, :class => "field"
-          .clearfix
-            = e.label :email
-            .input
-              = e.text_field :email, :class => "field"
+                %p= msg
+
+
+
         .clearfix
-        
-        = f.fields_for @profile do |z|
-          .clearfix
-            = z.label :question_one
-            .input
-              = z.text_field :question_one, :class => "field"
+          = f.label :name
+          .input
+            = f.text_field :name, :class => "field"
+        .clearfix
+          = f.label :email
+          .input
+            = f.text_field :email, :class => "field"
+        .clearfix
           
           .input
             = f.hidden_field :user_id, :class => "field"
 
           %span.note
             We take your privacy seriously and will never <br /> spam or sell your email.
+   
         .actions
           = f.submit((defined?(editing) ? "Submit" : "Submit"), :class => "btn primary")

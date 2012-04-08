@@ -37103,3 +37103,2621 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-05 23:34:58 -0500
 Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-04-08 09:02:49 -0500
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.haml within layouts/application (7.9ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 322ms (Views: 321.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /jquery_ujs.js - 200 OK (6ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /admin.js - 200 OK (4ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /contacts.js - 200 OK (5ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /editor.js - 200 OK (5ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /pages.js - 200 OK (4ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /plans.js - 200 OK (3ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /subs.js - 200 OK (4ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /profiles.js - 200 OK (4ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /subscriptions.js - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /sessions.js - 200 OK (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /users.js - 200 OK (3ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:02:50 -0500
+Served asset /visitors.js - 200 OK (3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-04-08 09:02:55 -0500
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Yg6dVYj46oxCpNYXUOf7iaKSQpt8aipsNhkdrio1HM=", "email"=>"visitorrdev@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'visitorrdev@gmail.com') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 438ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:02:56 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.4ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (12.8ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 299ms (Views: 30.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:02:58 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (20.1ms)
+Rendered users/edit.html.haml within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (undefined method `gsub' for nil:NilClass):
+    34:               - if defined? editing
+    35:                 %span.help-block  
+    36:                   This is your url - visitors can find you at:
+    37:                   = link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", root_path(user.slug)
+    38:               - else
+    39:                 %span.help-block 
+    40:                   Organization name will appear as URL ex. www.visitorr.com/YOURnameHERE  keep it short
+  app/views/users/_rc_form.html.haml:37:in `block in _app_views_users__rc_form_html_haml___2634762345889876858_70320574331800'
+  app/views/users/_rc_form.html.haml:4:in `_app_views_users__rc_form_html_haml___2634762345889876858_70320574331800'
+  app/views/users/edit.html.haml:4:in `_app_views_users_edit_html_haml__3823629020830758958_70320581491060'
+
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:04:47 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.3ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (13.8ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 126ms (Views: 30.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /admin.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /plans.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:04:48 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (20.1ms)
+Rendered users/edit.html.haml within layouts/application (21.5ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 81.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /profiles.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:49 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/landing_page.html (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 125ms (Views: 123.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:04:54 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (15.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 116ms (Views: 30.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /plans.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:19 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:05:20 -0500
+  Processing by UsersController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+ERROR: compiling _app_views_users__rc_form_html_haml___2634762345889876858_70320587955660 RAISED /Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:52: unknown regexp options - pa
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:52: syntax error, unexpected $undefined
+...p your current password</span>\n", 0, false);end
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected $undefined
+...        </div>\n        </div>\n        <div class='clearfix...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...     </div>\n        <div class='clearfix'>\n          #{_ha...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n          #{_hamlout.adjust_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected '}', expecting ')'
+));}\n          <div class='input...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n          <div class='input'>\n            #{_ham...
+                          ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected $undefined
+...n          <div class='input'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:58: syntax error, unexpected '}', expecting ')'
+));}\n          </div>\n          #{_hamlout.adjust_tabs(-1); 
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:64: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:64: syntax error, unexpected $undefined
+));}\n        </div>\n", -1, false);
+                     ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...t.push_text("        <div class='clearfix' id='cancel-subscr...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+...       <div class='clearfix' id='cancel-subscription'>\n    ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected $undefined
+...fix' id='cancel-subscription'>\n          #{_hamlout.adjust_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:69: syntax error, unexpected '}', expecting ')'
+));}\n        </div>\n", -1, false);end
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:70: unknown regexp option - p
+unmatched close parenthesis: /div>\n", -1, false);end
+_hamlout.push_text("        <noscript>\n          <p>\n            This form requires Javascript to use\n          </
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:70: syntax error, unexpected $undefined
+...ascript to use\n          </p>\n        </noscript>\n", 0, f...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:77: unknown regexp options - pa
+unmatched close parenthesis: /noscript>\n", 0, false);
+
+
+
+
+
+ if user.payment_provided?
+_hamlout.push_text("        <span class='note'>\n          Payment has been provided. Click subscribe to complete your registration.\n        </
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:77: syntax error, unexpected $undefined
+...registration.\n        </span>\n", 0, false);
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...lout.push_text("        <div id='credit-card'>\n          <d...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...        <div id='credit-card'>\n          <div id='credit-ca...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...redit-card'>\n          <div id='credit-card-errors' style='...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting ')'
+...v id='credit-card-errors' style='display:none'>\n           ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...-errors' style='display:none'>\n            <div class='aler...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...:none'>\n            <div class='alert-message block-message...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting ')'
+...message block-message error' id='stripe-error-message'></div...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected '<'
+...or' id='stripe-error-message'></div>\n          </div>\n    ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...sage'></div>\n          </div>\n          <!-- these fields ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...v>\n          <!-- these fields are disabled before submissi...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined, expecting keyword_do_LAMBDA or tLAMBEG
+... transmitted back to rails -->\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...rails -->\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected '}', expecting ')'
+));}\n            </div>\n       ...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected $undefined
+...      </div>\n          </div>\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...   </div>\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected '}', expecting ')'
+));}\n            </div>\n       ...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected $undefined
+...      </div>\n          </div>\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...   </div>\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:100: syntax error, unexpected '}', expecting ')'
+));}\n              #{_hamlout.fo...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:109: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_users__rc_form_html_haml___2634762345889876858_70320587955660(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "users/_rc_form";_old_output_buffer = @output_buffer;editing = local_assigns[:editing];rc_form = local_assigns[:rc_form];user = local_assigns[:user];;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<div class='row'>\n  <div class='span6 columns'>\n    <fieldset>\n      ", 3, false);
+
+
+haml_temp =  form_for user, :html => {:class => 'form-stacked'} do |f|
+ if user.errors.any?
+_hamlout.push_text("      <div class='alert-message block-message error'>\n        <p>#{_hamlout.adjust_tabs(2); 
+_hamlout.format_script_false_true_false_false_false_true_false(("#{Haml::Helpers.html_escape((pluralize(user.errors.count, "problem")))} with your registration:"
+));}</p>\n        <div class='errors'>\n", 1, false);
+ user.errors.full_messages.each do |msg|
+_hamlout.push_text("          <p>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((msg
+));}</p>\n", 0, false);end
+_hamlout.push_text("        </div>\n      </div>\n", -2, false);end
+ unless user.payment_provided? || user.subscribed === true
+_hamlout.push_text("      <div class='field'>\n        #{_hamlout.adjust_tabs(1); _hamlout.format_script_false_false_false_true_false_true_false(( radio_button_tag :pay_with, :card, true
+));}\n        ", 0, false);haml_temp =  label_tag :pay_with_card do
+_hamlout.push_text("        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "visa.png"
+));}\n        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "mastercard.png"
+));}\n        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "discover.png"
+));}\n        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "american_express.png"
+));}\n        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "jcb.png"
+));}\n", 0, false);end
+_hamlout.buffer << _hamlout.format_script_false_false_false_true_false_false_false(haml_temp);_hamlout.push_text("\n        #{_hamlout.format_script_false_false_false_true_false_true_false(( radio_button_tag :pay_with, :paypal
+));}\n        ", 0, false);haml_temp =  label_tag :pay_with_paypal do
+_hamlout.push_text("        #{_hamlout.format_script_false_false_false_true_false_true_false(( image_tag "paypal.png"
+));}\n", 0, false);end
+_hamlout.buffer << _hamlout.format_script_false_false_false_true_false_false_false(haml_temp);_hamlout.push_text("\n        <br>\n        <br>\n      </div>\n", -1, false);end
+_hamlout.push_text("      <div id='paypal_checkout' style='display:none'>\n        #{_hamlout.adjust_tabs(1); _hamlout.format_script_false_false_false_true_false_true_false(( link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path(plan_id: @user.plan_id)
+));}\n      </div>\n      <div id='billing_fields'>\n        <div class='clearfix'>\n          #{_hamlout.adjust_tabs(1); 
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( f.label :name, "Organization name"
+));}\n          <div class='input'>\n            #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( f.text_field :name, :class => "field"
+));}\n", 0, false); if defined? editing
+_hamlout.push_text("            <span class='help-block'>\n              This is your url - visitors can find you at:\n              #{_hamlout.adjust_tabs(1); 
+
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to "#{request.env["HTTP_HOST"]}/#{user.slug}", root_path() + "/" + #{user.slug}
+));}\n            </span>\n", -1, false); else
+_hamlout.push_text("            <span class='help-block'>\n              Organization name will appear as URL ex. www.visitorr.com/YOURnameHERE  keep it short\n            </span>\n", 0, false);end
+_hamlout.push_text("          </div>\n        </div>\n        <div class='clearfix'>\n          #{_hamlout.adjust_tabs(-1); 
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( f.label :email
+));}\n          <div class='input'>\n            #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( f.text_field :email, :class => "field"
+));}\n          </div>\n        </div>\n        <div class='clearfix'>\n          #{_hamlout.adjust_tabs(-1); 
+
+_hamlout.format_script_false_false_false_true_false_true_false(( f.label :password
+));}\n          <div class='input'>\n            #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( f.password_field :password, :class => "field"
+));}\n", 0, false); if defined? editing
+_hamlout.push_text("            <span class='help-block'>Leave blank to keep your current password</span>\n", 0, false);end
+_hamlout.push_text("          </div>\n        </div>\n        <div class='clearfix'>\n          #{_hamlout.adjust_tabs(-1); 
+
+_hamlout.format_script_false_false_false_true_false_true_false(( f.label :password_confirmation
+));}\n          <div class='input'>\n            #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( f.password_field :password_confirmation, :class => "field"
+));}\n          </div>\n          #{_hamlout.adjust_tabs(-1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( f.hidden_field :stripe_card_token
+));}\n          #{_hamlout.format_script_false_false_false_true_false_true_false(( f.hidden_field :last_4_digits
+));}\n          #{_hamlout.format_script_false_false_false_true_false_true_false(( f.hidden_field :paypal_customer_token
+));}\n          #{_hamlout.format_script_false_false_false_true_false_true_false(( f.hidden_field :paypal_payment_token
+));}\n          #{_hamlout.format_script_false_false_false_true_false_true_false(( f.hidden_field :plan_id
+));}\n        </div>\n", -1, false);
+
+ if user.subscribed == true
+_hamlout.push_text("        <div class='clearfix' id='cancel-subscription'>\n          #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to "Cancel subscription", cancel_subscription_path
+));}\n        </div>\n", -1, false);end
+_hamlout.push_text("        <noscript>\n          <p>\n            This form requires Javascript to use\n          </p>\n        </noscript>\n", 0, false);
+
+
+
+
+
+ if user.payment_provided?
+_hamlout.push_text("        <span class='note'>\n          Payment has been provided. Click subscribe to complete your registration.\n        </span>\n", 0, false);
+
+ else
+ unless user.payment_provided? || user.subscribed === true
+_hamlout.push_text("        <div id='credit-card'>\n          <div id='credit-card-errors' style='display:none'>\n            <div class='alert-message block-message error' id='stripe-error-message'></div>\n          </div>\n          <!-- these fields are disabled before submission and are never transmitted back to rails -->\n          <div class='clearfix'>\n            #{_hamlout.adjust_tabs(2); 
+
+
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( label_tag :card_number, "Credit Card Number"
+));}\n            <div class='input'>\n              #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( text_field_tag :card_number, nil, name: nil
+));}\n            </div>\n          </div>\n          <div class='clearfix'>\n            #{_hamlout.adjust_tabs(-1); 
+
+_hamlout.format_script_false_false_false_true_false_true_false(( label_tag :card_code, "Security Code on Card (CVV)"
+));}\n            <div class='input'>\n              #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( text_field_tag :card_code, nil, name: nil
+));}\n            </div>\n          </div>\n          <div class='clearfix'>\n            #{_hamlout.adjust_tabs(-1); 
+
+_hamlout.format_script_false_false_false_true_false_true_false(( label_tag :card_month, "Card Expiration"
+));}\n            <div class='input'>\n              #{_hamlout.adjust_tabs(1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "medium"}
+));}\n              #{_hamlout.format_script_false_false_false_true_false_true_false(( select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "small"}
+));}\n            </div>\n            <!-- empty -->\n          </div>\n          <span class='note'>\n            Your credit card details will be sent directly to our payment processor\n          </span>\n        </div>\n", -3, false);end
+end
+_hamlout.push_text("      </div>\n      <div class='actions'>\n        #{
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( f.submit((defined?(editing) ? "Update" : "Subscribe"), :class => "btn primary")
+));}\n      </div>\n", -1, false);end
+_hamlout.buffer << _hamlout.format_script_false_false_false_true_false_false_false(haml_temp);_hamlout.push_text("\n    </fieldset>\n  </div>\n</div>\n", -3, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:309:in `module_eval'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:309:in `compile'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:217:in `compile!'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:170:in `block in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:55:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:169:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/partial_renderer.rb:256:in `render_partial'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/partial_renderer.rb:228:in `block (2 levels) in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `block in instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/partial_renderer.rb:227:in `block in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/partial_renderer.rb:219:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:15:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/haml-3.1.4/lib/haml/helpers/action_view_mods.rb:11:in `block in render_with_haml'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/haml-3.1.4/lib/haml/helpers.rb:90:in `non_haml'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/haml-3.1.4/lib/haml/helpers/action_view_mods.rb:11:in `render_with_haml'
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/edit.html.haml:4:in `_app_views_users_edit_html_haml__3823629020830758958_70320581491060'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:171:in `block in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:55:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:169:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `block in instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:99:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/lalo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:425:in `_run__1711741534763509962__process_action__3695514773569333051__callbacks'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `block in instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `instrument'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/base.rb:121:in `process'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal.rb:193:in `dispatch'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal.rb:236:in `block in action'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.1.15/lib/sass/plugin/rack.rb:54:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/flash.rb:247:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/query_cache.rb:64:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/rack/logger.rb:13:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/engine.rb:456:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/content_length.rb:14:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/handler/webrick.rb:59:in `service'
+/Users/lalo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/lalo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/lalo/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered users/_rc_form.html.haml (26.5ms)
+Rendered users/edit.html.haml within layouts/application (27.6ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:52: unknown regexp options - pa
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:52: syntax error, unexpected $undefined
+...p your current password</span>\n", 0, false);end
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected $undefined
+...        </div>\n        </div>\n        <div class='clearfix...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...     </div>\n        <div class='clearfix'>\n          #{_ha...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:53: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n          #{_hamlout.adjust_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected '}', expecting ')'
+));}\n          <div class='input...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n          <div class='input'>\n            #{_ham...
+                          ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:56: syntax error, unexpected $undefined
+...n          <div class='input'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:58: syntax error, unexpected '}', expecting ')'
+));}\n          </div>\n          #{_hamlout.adjust_tabs(-1); 
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:64: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:64: syntax error, unexpected $undefined
+));}\n        </div>\n", -1, false);
+                     ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...t.push_text("        <div class='clearfix' id='cancel-subscr...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+...       <div class='clearfix' id='cancel-subscription'>\n    ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:67: syntax error, unexpected $undefined
+...fix' id='cancel-subscription'>\n          #{_hamlout.adjust_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:69: syntax error, unexpected '}', expecting ')'
+));}\n        </div>\n", -1, false);end
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:70: unknown regexp option - p
+unmatched close parenthesis: /div>\n", -1, false);end
+_hamlout.push_text("        <noscript>\n          <p>\n            This form requires Javascript to use\n          </
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:70: syntax error, unexpected $undefined
+...ascript to use\n          </p>\n        </noscript>\n", 0, f...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:77: unknown regexp options - pa
+unmatched close parenthesis: /noscript>\n", 0, false);
+
+
+
+
+
+ if user.payment_provided?
+_hamlout.push_text("        <span class='note'>\n          Payment has been provided. Click subscribe to complete your registration.\n        </
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:77: syntax error, unexpected $undefined
+...registration.\n        </span>\n", 0, false);
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...lout.push_text("        <div id='credit-card'>\n          <d...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...        <div id='credit-card'>\n          <div id='credit-ca...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...redit-card'>\n          <div id='credit-card-errors' style='...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting ')'
+...v id='credit-card-errors' style='display:none'>\n           ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...-errors' style='display:none'>\n            <div class='aler...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...:none'>\n            <div class='alert-message block-message...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting ')'
+...message block-message error' id='stripe-error-message'></div...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected '<'
+...or' id='stripe-error-message'></div>\n          </div>\n    ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...sage'></div>\n          </div>\n          <!-- these fields ...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...v>\n          <!-- these fields are disabled before submissi...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined, expecting keyword_do_LAMBDA or tLAMBEG
+... transmitted back to rails -->\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...rails -->\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:81: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:88: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected '}', expecting ')'
+));}\n            </div>\n       ...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected $undefined
+...      </div>\n          </div>\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...   </div>\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:90: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:93: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected '}', expecting ')'
+));}\n            </div>\n       ...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: unknown regexp options - dv
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected $undefined
+...      </div>\n          </div>\n          <div class='clearf...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...   </div>\n          <div class='clearfix'>\n            #{_...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:95: syntax error, unexpected $undefined
+...        <div class='clearfix'>\n            #{_hamlout.adjus...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected '}', expecting ')'
+));}\n            <div class='inp...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n            <div class='input'>\n              #{_h...
+                            ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:98: syntax error, unexpected $undefined
+...           <div class='input'>\n              #{_hamlout.adj...
+...                               ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:100: syntax error, unexpected '}', expecting ')'
+));}\n              #{_hamlout.fo...
+    ^
+/Users/lalo/Documents/Aptana Studio 3 Workspace/Visitorr/app/views/users/_rc_form.html.haml:109: syntax error, unexpected keyword_ensure, expecting $end):
+    49:             .input
+    50:               = f.password_field :password, :class => "field"
+    51:               - if defined? editing
+    52:                 %span.help-block Leave blank to keep your current password
+    53: 
+    54:           .clearfix
+    55:             = f.label :password_confirmation
+  app/views/users/edit.html.haml:4:in `_app_views_users_edit_html_haml__3823629020830758958_70320581491060'
+
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (21.4ms)
+Rendered users/edit.html.haml within layouts/application (22.7ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 96ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:05:55 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:06:13 -0500
+  Processing by UsersController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/_rc_form.html.haml (19.1ms)
+Rendered users/edit.html.haml within layouts/application (20.3ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 59ms (Views: 36.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:14 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (21.7ms)
+Rendered users/edit.html.haml within layouts/application (23.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 97ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:27 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/landing_page.html (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 99ms (Views: 97.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /admin.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /plans.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:29 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+  Processing by UsersController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/_rc_form.html.haml (5.0ms)
+Rendered users/edit.html.haml within layouts/application (6.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 77ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /subscriptions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:54 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:06:55 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+  [1m[35mProfile Load (2.0ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (19.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 133ms (Views: 35.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /pages.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:06:56 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started PUT "/profiles/new.2" for 127.0.0.1 at 2012-04-08 09:07:16 -0500
+  Processing by ProfilesController#update as 
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "profile"=>{"visitor"=>{"name"=>"Eduardo Lopez", "email"=>"eddielopezzzz@hotmail.com"}, "profile"=>{"question_one"=>"What is the meaning of life"}, "user_id"=>"1"}, "commit"=>"Submit", "id"=>"new"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: visitor, profile, user_id
+Redirected to http://localhost:3000/profiles/visitorr-dev
+Completed 302 Found in 93ms
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:07:16 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+  [1m[36mVisitor Load (0.2ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 LIMIT 1[0m
+Rendered profiles/show.html.erb within layouts/application (11.9ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 125ms (Views: 27.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /pages.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /plans.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:17 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.3ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (12.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 120ms (Views: 26.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:36 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (5.3ms)
+Rendered users/edit.html.haml within layouts/application (6.6ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 87ms (Views: 65.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:40 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:07:41 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (15.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 178ms (Views: 69.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:07:42 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (5.8ms)
+Rendered users/edit.html.haml within layouts/application (6.9ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 44ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /admin.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /profiles.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:11 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (7.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 135ms (Views: 25.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:13 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (8.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 133ms (Views: 24.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /contacts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:38 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 115ms (Views: 18.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /plans.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:11:41 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (11.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 174ms (Views: 31.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /admin.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:07 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 166ms (Views: 61.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:13:09 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (1.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 115ms (Views: 17.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /profiles.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:21:45 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started POST "/visitors" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+  Processing by VisitorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "visitor"=>{"user_id"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (5.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 139ms (Views: 23.6ms | ActiveRecord: 40.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /contacts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:00 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:01 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitors" for 127.0.0.1 at 2012-04-08 09:23:12 -0500
+
+AbstractController::ActionNotFound (The action 'index' could not be found for VisitorsController):
+  
+
+Rendered /Users/lalo/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.3ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (11.2ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 127ms (Views: 25.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /editor.js - 304 Not Modified (44ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /pages.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /profiles.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:17 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35mVisitor Load (0.2ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 LIMIT 1
+Rendered profiles/show.html.erb within layouts/application (11.3ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 116ms (Views: 26.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:19 -0500
+Served asset /visitors.js - 304 Not Modified (39ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+  Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/_rc_form.html.haml (5.0ms)
+Rendered users/edit.html.haml within layouts/application (6.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 76ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:21 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:23:22 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 122ms (Views: 22.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /admin.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /plans.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:23:23 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1
+Rendered visitors/new.html.haml within layouts/application (7.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 116ms (Views: 23.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /admin.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:23 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started POST "/visitors" for 127.0.0.1 at 2012-04-08 09:29:35 -0500
+  Processing by VisitorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "visitor"=>{"name"=>"Eduardo Lopez", "email"=>"eddielopezzzz@hotmail.com", "user_id"=>"1"}, "commit"=>"Submit"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+  [1m[35mSQL (25.4ms)[0m  INSERT INTO "visitors" ("created_at", "email", "name", "updated_at", "user_id", "welcomed") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sun, 08 Apr 2012 14:29:35 UTC +00:00], ["email", "eddielopezzzz@hotmail.com"], ["name", "Eduardo Lopez"], ["updated_at", Sun, 08 Apr 2012 14:29:35 UTC +00:00], ["user_id", 1], ["welcomed", false]]
+  [1m[36mVisitor Load (0.2ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."id" = 14 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered visitor_mailer/welcome_mailer.html.erb (0.6ms)
+WARNING: Can't mass-assign protected attributes: welcomed
+
+Sent mail to visitorrdev@gmail.com (6096ms)
+Date: Sun, 08 Apr 2012 09:29:35 -0500
+From: visitorrdev@gmail.com
+To: visitorrdev@gmail.com
+Message-ID: <4f81a0cf8d994_6893ff4cb586b8c720f2@Lalos-Macbook-Air.local.mail>
+Subject: [["eddielopezzzz@hotmail.com"]] Welcome to my app
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>
+  <p>
+	testing</p>
+
+</p>
+<p>
+  http://www.youtube.com
+</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com" frameborder="0" allowfullscreen></iframe>
+
+<p>
+  512-666-7777
+  1234 main st
+</p>
+Redirected to http://localhost:3000/success
+Completed 302 Found in 6460ms
+
+
+Started GET "/success" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+  Processing by VisitorsController#success as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered visitors/success.html.erb within layouts/application (0.3ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 106ms (Views: 34.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:41 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (45.5ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 113ms (Views: 61.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /editor.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:44 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/visitors/14" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+  Processing by VisitorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "id"=>"14"}
+  [1m[35mVisitor Load (0.1ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."id" = 14 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "visitors" WHERE "visitors"."id" = ?[0m  [["id", 14]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 13ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.3ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (10.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 117ms (Views: 24.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)

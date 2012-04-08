@@ -2,14 +2,14 @@ class VisitorsController < ApplicationController
  has_mobile_fu
   
   def new
-    #@user = User.find_by_slug(params[:id])
-    @user = User.find_by_id(params[:user_id])
+    @user = User.find_by_slug(params[:id])
+    #@user = User.find_by_id(params[:user_id])
     if @user.nil?
       redirect_to root_url, 
         :notice => "Great news everyone! This organization doesn't exist yet! Why don't you create it?"
     else
       @visitor = @user.visitors.new
-      @profile = Profile.find_by_user_id(@user.id)
+      #@profile = Profile.find_by_user_id(@user.id)
     end
   end
 
