@@ -39721,3 +39721,741 @@ Served asset /subscriptions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:29:49 -0500
 Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:35:22 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (14.9ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 161ms (Views: 66.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /plans.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:23 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+  Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+  [1m[36mVisitor Load (0.2ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 LIMIT 1[0m
+Rendered profiles/show.html.erb within layouts/application (11.6ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 122ms (Views: 26.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:24 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/visitorr-dev/edit" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+  Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1[0m
+Rendered profiles/edit.html.haml within layouts/application (31.8ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 142ms (Views: 48.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /editor.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /plans.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:27 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+  Processing by UsersController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/_rc_form.html.haml (6.0ms)
+Rendered users/edit.html.haml within layouts/application (7.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 76ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:31 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (4.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 160ms (Views: 60.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:33 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (11.4ms)
+Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 125ms (Views: 28.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /plans.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:36 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+  Processing by UsersController#edit as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/_rc_form.html.haml (5.6ms)
+Rendered users/edit.html.haml within layouts/application (7.5ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 88ms (Views: 63.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /plans.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:37 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/visitorr-dev" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+  Processing by VisitorsController#new as HTML
+  Parameters: {"id"=>"visitorr-dev"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."slug" = 'visitorr-dev' LIMIT 1[0m
+Rendered visitors/new.html.haml within layouts/application (2.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 114ms (Views: 20.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /admin.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:39 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started POST "/visitors" for 127.0.0.1 at 2012-04-08 09:35:48 -0500
+  Processing by VisitorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "visitor"=>{"name"=>"Eduardo Lopez", "email"=>"eddielopezzzz@hotmail.com", "user_id"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "visitors" ("created_at", "email", "name", "updated_at", "user_id", "welcomed") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 08 Apr 2012 14:35:48 UTC +00:00], ["email", "eddielopezzzz@hotmail.com"], ["name", "Eduardo Lopez"], ["updated_at", Sun, 08 Apr 2012 14:35:48 UTC +00:00], ["user_id", 1], ["welcomed", false]]
+  [1m[35mVisitor Load (0.2ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."id" = 15 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = 1 LIMIT 1
+Rendered visitor_mailer/welcome_mailer.html.erb (0.2ms)
+WARNING: Can't mass-assign protected attributes: welcomed
+
+Sent mail to visitorrdev@gmail.com (2356ms)
+Date: Sun, 08 Apr 2012 09:35:48 -0500
+From: visitorrdev@gmail.com
+To: visitorrdev@gmail.com
+Message-ID: <4f81a2444f8ef_6893ff4c8d9f7187217a@Lalos-Macbook-Air.local.mail>
+Subject: [["eddielopezzzz@hotmail.com"]] Welcome to my app
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>
+  <p>
+	testing</p>
+
+</p>
+<p>
+  http://www.youtube.com
+</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com" frameborder="0" allowfullscreen></iframe>
+
+<p>
+  512-666-7777
+  1234 main st
+</p>
+Redirected to http://localhost:3000/success
+Completed 302 Found in 2503ms
+
+
+Started GET "/success" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+  Processing by VisitorsController#success as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered visitors/success.html.erb within layouts/application (0.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 99ms (Views: 73.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /plans.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /subs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:50 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mVisitor Load (0.3ms)[0m  SELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+Rendered admin/visitors.html.erb within layouts/application (10.9ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 116ms (Views: 25.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:52 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/visitors/15" for 127.0.0.1 at 2012-04-08 09:35:56 -0500
+  Processing by VisitorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5KBIbiyVZnyTh/ohde8T843JVyBIMV/9W+bPQpAvbLs=", "id"=>"15"}
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 1ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-04-08 09:35:56 -0500
+  Processing by AdminController#visitors as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mVisitor Load (0.3ms)[0m  [1mSELECT "visitors".* FROM "visitors" WHERE "visitors"."user_id" = 1 ORDER BY created_at desc[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visitors" WHERE "visitors"."user_id" = 1[0m
+Rendered admin/visitors.html.erb within layouts/application (12.1ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 129ms (Views: 28.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:56 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /contacts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/editor.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /profiles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subs.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /subs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/subscriptions.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /subscriptions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/visitors.js?body=1" for 127.0.0.1 at 2012-04-08 09:35:57 -0500
+Served asset /visitors.js - 304 Not Modified (0ms)
